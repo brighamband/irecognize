@@ -1,6 +1,6 @@
 # irecognize
 
-A new Flutter project.
+Flutter app to help people reconnect meaningfully with individuals they recognize.
 
 ## Getting Started
 
