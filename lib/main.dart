@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/bio.dart';
+import 'package:irecognize/homemap.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,6 +63,20 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void goToHomeMap() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomeMapRoute()),
+    );
+  }
+
+  void goToBio() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const BioRoute()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -102,6 +118,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            ElevatedButton(onPressed: goToHomeMap, child: const Text('Go to Home/Map')),
+            ElevatedButton(onPressed: goToBio, child: const Text('Go to Bio'))
           ],
         ),
       ),
