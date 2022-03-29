@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/bio.dart';
 import 'package:irecognize/gyro.dart';
+import 'package:irecognize/person_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   void goToBioPage() {
     Navigator.push(
       context,
@@ -38,11 +38,23 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: const Center(
-        child: Text(
-          "Home/Map",
-        ),
-      ),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            const Text(
+              "People Near Me",
+            ),
+            ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int index) {
+                  return const PersonCard(name: 'Hello');
+                  // return Card(child: ListTile(title: Text("List item $index")));
+                }),
+            const Text("Friends I've Talked to Recently")
+          ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () => goToGyroPage(),
         tooltip: 'Gyroscope',
