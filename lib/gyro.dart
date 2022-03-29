@@ -6,14 +6,13 @@ class GyroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('iRecognize | Gyro Page'),
-      ),
-      body: const Center(
-        child: Text(
-          "Bio",
-        ),      
-      )
-    );
+        appBar: AppBar(
+          title: const Text('iRecognize | Gyro Page'),
+        ),
+        body: const Center(
+          child: Text(
+            "Gyro",
+          ),
+        ));
   }
 }
