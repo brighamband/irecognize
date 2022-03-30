@@ -29,11 +29,13 @@ class GyroPage extends StatelessWidget {
                 child: Row(
                   children: const [
                     Padding(padding: EdgeInsets.all(40)),
-                    Image(
-                      image: AssetImage('assets/brad-pic.jpg'),
-                      height: 50,
-                      width: 50,
-                    ),
+                    ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(35)),
+                        child: Image(
+                          image: AssetImage('assets/brad-pic.jpg'),
+                          height: 50,
+                          width: 50,
+                        )),
                     Padding(padding: EdgeInsets.all(20)),
                     Text("Brad Pitt")
                   ],
