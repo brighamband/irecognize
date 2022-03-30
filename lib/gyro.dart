@@ -25,7 +25,7 @@ class GyroPage extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                   color: Color.fromARGB(248, 202, 202, 206)),
               child: Padding(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: Row(
                   children: const [
                     Padding(padding: EdgeInsets.all(40)),
@@ -41,8 +41,8 @@ class GyroPage extends StatelessWidget {
                   ],
                 ),
               )),
-          Padding(padding: EdgeInsets.all(30)),
-          ElevatedButton(onPressed: () {}, child: Text("View Bio"))
+          const Padding(padding: EdgeInsets.all(30)),
+          ElevatedButton(onPressed: () {}, child: const Text("View Bio"))
         ],
       )),
     );
