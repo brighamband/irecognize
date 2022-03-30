@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('ADD SEARCHBAR HERE...'),
         actions: <Widget>[
@@ -49,10 +50,11 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
+      body: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
             Padding(
                 padding: const EdgeInsets.all(15),
                 child: Text("People Near Me",
@@ -76,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   return PersonCard(name: "Sally Mae $index");
                   // return PersonCard(name: _people[index]["name"]);
                 }),
-          ]),
+          ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
