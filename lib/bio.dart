@@ -10,6 +10,23 @@ class BioPage extends StatelessWidget {
   final bool isMine;
   final String name;
 
+  Widget getTabBar(BuildContext context) {
+    return Container(
+      color: Theme.of(context).primaryColor,
+      // color: Colors.white,
+      child: const TabBar(
+        tabs: [
+          Tab(text: 'Highlights', icon: Icon(Icons.hotel_class_sharp)),
+          Tab(text: 'Places', icon: Icon(Icons.location_on)),
+          Tab(text: 'Friends', icon: Icon(Icons.people_alt_sharp)),
+          Tab(text: 'Chats', icon: Icon(Icons.record_voice_over_sharp))
+        ],
+        labelColor: Colors.white,
+        indicatorColor: Colors.redAccent,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,12 +48,21 @@ class BioPage extends StatelessWidget {
                 ]
               : null,
         ),
-        body: Center(
-          child: isMine
-              ? Text("My name is $name")
-              : Text(
-                  "Their name is $name",
+        body: Column(children: <Widget>[
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                const CircleAvatar(
+                  backgroundColor: Colors.amber,
                 ),
-        ));
+                // CircleAvatar(backgroundImage: Icon(Icons.abc)),
+                Column(children: <Widget>[
+                  Text(name),
+                  const Text("Here's more info about me")
+                ]),
+              ]),
+          const Text('Our Commonalities'),
+          DefaultTabController(length: 4, child: getTabBar(context))
+        ]));
   }
 }

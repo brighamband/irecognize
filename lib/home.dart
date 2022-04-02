@@ -87,7 +87,8 @@ class _HomePageState extends State<HomePage> {
           );
         },
         tooltip: 'Gyroscope',
-        child: const Icon(Icons.explore),
+        // child: const Icon(Icons.explore),
+        child: const Icon(Icons.my_location),
       ),
     );
   }
