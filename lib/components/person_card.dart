@@ -32,6 +32,11 @@ class _PersonCardState extends State<PersonCard> {
         title: Text(widget.name),
         onTap: () => goToBioPage(),
       ),
+      shape: RoundedRectangleBorder(
+          side: BorderSide(color: colorScheme.outline),
+          borderRadius: BorderRadius.circular(10)),
+      elevation: 0,
+      margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
     );
   }
 }

@@ -10,15 +10,6 @@ class Navbar extends StatelessWidget with PreferredSizeWidget {
 
   final bool onOwnBio;
 
-  void goToBioPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) =>
-              const BioPage(onOwnBio: true, name: 'Brad Pitt')),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -31,7 +22,12 @@ class Navbar extends StatelessWidget with PreferredSizeWidget {
                 icon: Icon(Icons.account_circle, color: colorScheme.secondary),
                 iconSize: 40,
                 onPressed: () {
-                  goToBioPage(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const BioPage(onOwnBio: true, name: 'Brad Pitt')),
+                  );
                 },
               )
             ]

@@ -35,7 +35,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const Navbar(),
       body: SingleChildScrollView(
           child: Column(
@@ -47,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text("People Near Me",
                     style: Theme.of(context).textTheme.headline6)),
             ListView.builder(
-                scrollDirection: Axis.vertical,
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 5,
                 itemBuilder: (BuildContext context, int index) {
@@ -58,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text("Friends I've Talked to Recently",
                     style: Theme.of(context).textTheme.headline6)),
             ListView.builder(
-                scrollDirection: Axis.vertical,
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 7,
                 itemBuilder: (BuildContext context, int index) {
