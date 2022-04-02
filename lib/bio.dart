@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/components/navbar.dart';
 
 class BioPage extends StatelessWidget {
   const BioPage({
     Key? key,
-    required this.isMine,
+    required this.onOwnBio,
     required this.name,
   }) : super(key: key);
 
-  final bool isMine;
+  final bool onOwnBio;
   final String name;
 
   Widget getTabBar(BuildContext context) {
@@ -22,7 +23,7 @@ class BioPage extends StatelessWidget {
           Tab(text: 'Chats', icon: Icon(Icons.record_voice_over_sharp))
         ],
         labelColor: Colors.white,
-        indicatorColor: Colors.redAccent,
+        indicatorColor: Colors.black,
       ),
     );
   }
@@ -30,24 +31,7 @@ class BioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('iRecognize | Bio Page'),
-          actions: !isMine
-              ? <Widget>[
-                  IconButton(
-                    icon: const Icon(Icons.account_circle),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const BioPage(isMine: true, name: 'Brad Pitt')),
-                      );
-                    },
-                  )
-                ]
-              : null,
-        ),
+        appBar: Navbar(onOwnBio: onOwnBio),
         body: Column(children: <Widget>[
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

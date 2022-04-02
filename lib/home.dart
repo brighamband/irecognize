@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:irecognize/bio.dart';
+import 'package:irecognize/components/navbar.dart';
 import 'package:irecognize/gyro.dart';
 import 'package:irecognize/components/person_card.dart';
+import 'package:irecognize/models/person.dart';
+import 'package:irecognize/utils/theme.dart';
 
 // import this to be able to call json.decode()
 import 'dart:convert';
 
 // import this to easily send HTTP request
 import 'package:http/http.dart' as http;
-import 'package:irecognize/models/person.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,22 +36,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: const Text('ADD SEARCHBAR HERE...'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.account_circle),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        const BioPage(isMine: true, name: 'Brad Pitt')),
-              );
-            },
-          )
-        ],
-      ),
+      appBar: const Navbar(),
       body: SingleChildScrollView(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -89,6 +76,7 @@ class _HomePageState extends State<HomePage> {
         tooltip: 'Gyroscope',
         // child: const Icon(Icons.explore),
         child: const Icon(Icons.my_location),
+        backgroundColor: colorScheme.tertiary,
       ),
     );
   }

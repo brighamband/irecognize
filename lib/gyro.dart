@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/components/navbar.dart';
 
 class GyroPage extends StatelessWidget {
   const GyroPage({Key? key}) : super(key: key);
@@ -6,9 +7,10 @@ class GyroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('iRecognize | Gyro Page'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('iRecognize | Gyro Page'),
+      // ),
+      appBar: const Navbar(),
       body: Center(
           child: Column(
         children: [

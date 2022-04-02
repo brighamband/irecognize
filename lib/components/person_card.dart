@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/bio.dart';
+import 'package:irecognize/utils/theme.dart';
 
 class PersonCard extends StatefulWidget {
   const PersonCard({
@@ -18,7 +19,7 @@ class _PersonCardState extends State<PersonCard> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => BioPage(isMine: false, name: widget.name)),
+          builder: (context) => BioPage(onOwnBio: false, name: widget.name)),
     );
   }
 
@@ -26,7 +27,8 @@ class _PersonCardState extends State<PersonCard> {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: const Icon(Icons.account_circle),
+        leading:
+            Icon(Icons.account_circle, color: colorScheme.primary, size: 40),
         title: Text(widget.name),
         onTap: () => goToBioPage(),
       ),
