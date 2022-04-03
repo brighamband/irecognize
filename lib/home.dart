@@ -5,6 +5,7 @@ import 'package:irecognize/components/navbar.dart';
 import 'package:irecognize/gyro.dart';
 import 'package:irecognize/components/person_card.dart';
 import 'package:irecognize/models/person.dart';
+import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 // import this to be able to call json.decode()
@@ -35,14 +36,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Navbar(),
+      appBar: const Navbar(
+        name: CURRENT_USER_NAME,
+      ),
       body: SingleChildScrollView(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
             Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(16.0),
                 child: Text("People Near Me",
                     style: Theme.of(context)
                         .textTheme
@@ -56,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                   return PersonCard(name: "John Doe $index");
                 }),
             Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(16.0),
                 child: Text("Friends I've Talked to Recently",
                     style: Theme.of(context)
                         .textTheme

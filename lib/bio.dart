@@ -18,7 +18,7 @@ class BioPage extends StatelessWidget {
       length: 4,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: Navbar(onBioPage: true, onOwnBio: onOwnBio),
+        appBar: Navbar(onBioPage: true, onOwnBio: onOwnBio, name: name),
         body: !onOwnBio
             ? TabBarView(
                 children: [

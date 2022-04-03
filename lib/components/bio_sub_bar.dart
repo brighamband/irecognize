@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class BioSubBar extends StatelessWidget implements PreferredSizeWidget {

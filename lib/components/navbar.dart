@@ -9,12 +9,12 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     Key? key,
     this.onBioPage = false,
     this.onOwnBio = false,
+    this.name = '',
   }) : super(key: key);
 
   final bool onBioPage;
   final bool onOwnBio;
-
-  final double fullSizeWithBio = 4.5 * kToolbarHeight;
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +32,14 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const BioPage(
-                              onOwnBio: true, name: CURRENT_USER_NAME)),
+                          builder: (context) =>
+                              BioPage(onOwnBio: true, name: name)),
                     );
                   },
                 )
               ]
             : null,
-        bottom: onBioPage
-            ? BioSubBar(name: "Bob Marley", onOwnBio: onOwnBio)
-            : null);
+        bottom: onBioPage ? BioSubBar(name: name, onOwnBio: onOwnBio) : null);
   }
 
   @override
