@@ -11,42 +11,33 @@ class BioPage extends StatelessWidget {
   final bool onOwnBio;
   final String name;
 
-  Widget getTabBar(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
-      // color: Colors.white,
-      child: const TabBar(
-        tabs: [
-          Tab(text: 'Highlights', icon: Icon(Icons.hotel_class_sharp)),
-          Tab(text: 'Places', icon: Icon(Icons.location_on)),
-          Tab(text: 'Friends', icon: Icon(Icons.people_alt_sharp)),
-          Tab(text: 'Chats', icon: Icon(Icons.record_voice_over_sharp))
-        ],
-        labelColor: Colors.white,
-        indicatorColor: Colors.black,
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: Navbar(onOwnBio: onOwnBio),
-        body: Column(children: <Widget>[
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                const CircleAvatar(
-                  backgroundColor: Colors.amber,
-                ),
-                // CircleAvatar(backgroundImage: Icon(Icons.abc)),
-                Column(children: <Widget>[
-                  Text(name),
-                  const Text("Here's more info about me")
-                ]),
-              ]),
-          const Text('Our Commonalities'),
-          DefaultTabController(length: 4, child: getTabBar(context))
-        ]));
+    return DefaultTabController(
+      initialIndex: 0,
+      length: 4,
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: Navbar(onBioPage: true, onOwnBio: onOwnBio),
+        body: !onOwnBio
+            ? TabBarView(
+                children: [
+                  Center(
+                    child: Text("Mutual highlights I've shared with $name ..."),
+                  ),
+                  Center(
+                    child: Text("Mutual places I've shared with $name ..."),
+                  ),
+                  Center(
+                    child: Text("Mutual friends I've shared with $name ..."),
+                  ),
+                  Center(
+                    child: Text("Mutual chats I've shared with $name ..."),
+                  ),
+                ],
+              )
+            : const Center(child: Text("FIXME - Display friends and chats???")),
+      ),
+    );
   }
 }

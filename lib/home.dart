@@ -40,11 +40,14 @@ class _HomePageState extends State<HomePage> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
+              children: [
             Padding(
                 padding: const EdgeInsets.all(15),
                 child: Text("People Near Me",
-                    style: Theme.of(context).textTheme.headline6)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(color: colorScheme.onBackground))),
             ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -55,7 +58,10 @@ class _HomePageState extends State<HomePage> {
             Padding(
                 padding: const EdgeInsets.all(15),
                 child: Text("Friends I've Talked to Recently",
-                    style: Theme.of(context).textTheme.headline6)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(color: colorScheme.onBackground))),
             ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
