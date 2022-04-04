@@ -21,7 +21,8 @@ class PersonPage extends StatelessWidget {
           body: TabBarView(
             children: [
               Center(
-                child: Text("Mutual highlights I've shared with $name ..."),
+                child: Text(
+                    "Info about $name that we've discussed ... Add social media links"),
               ),
               Center(
                 child: Text("Mutual places I've shared with $name ..."),

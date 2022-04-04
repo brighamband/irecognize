@@ -48,7 +48,7 @@ class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
       getBioBar(context),
       TabBar(
         tabs: const [
-          Tab(text: 'Highlights', icon: Icon(Icons.hotel_class_sharp)),
+          Tab(text: 'About', icon: Icon(Icons.info)),
           Tab(text: 'Places', icon: Icon(Icons.location_on)),
           Tab(text: 'Friends', icon: Icon(Icons.people_alt_sharp)),
           Tab(text: 'Chats', icon: Icon(Icons.record_voice_over_sharp))
