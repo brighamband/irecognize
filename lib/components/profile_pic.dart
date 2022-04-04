@@ -29,12 +29,8 @@ class ProfilePic extends StatelessWidget {
   }
 
   Widget getDefaultImage() {
-    return FittedBox(
-      child: Icon(Icons.account_circle,
-          color: colorScheme.primary, size: getSize()),
-    );
-    // return Icon(Icons.account_circle,
-    //     color: colorScheme.primary, size: getSize() + 10.0);
+    return Icon(Icons.account_circle,
+        color: colorScheme.primary, size: getSize() + 10.0);
   }
 
   @override
