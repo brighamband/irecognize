@@ -5,9 +5,9 @@ import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class PersonGrid extends StatelessWidget {
-  const PersonGrid({
-    Key? key,
-  }) : super(key: key);
+  const PersonGrid({Key? key, this.size = 20}) : super(key: key);
+
+  final int size;
 
   Widget getPicCard(BuildContext context, String name, int index) {
     return GestureDetector(
@@ -40,7 +40,7 @@ class PersonGrid extends StatelessWidget {
               childAspectRatio: 1,
               crossAxisSpacing: 5,
               mainAxisSpacing: 5),
-          itemCount: 20,
+          itemCount: size,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

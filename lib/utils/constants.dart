@@ -17,4 +17,4 @@ const double CIRCLE_BORDER_RADIUS = 50.0;
 
 // TEMPORARY HARD-CODED DATA
 const String CURRENT_USER_NAME = 'Brad Pitt';
-const String TEST_USER_IMG = r'https://randomuser.me/api/portraits/men/33.jpg';
+const String TEST_USER_IMG = r'https://randomuser.me/api/portraits/men/32.jpg';

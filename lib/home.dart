@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
+import 'package:irecognize/components/person_grid.dart';
 import 'package:irecognize/gyro.dart';
 import 'package:irecognize/components/person_list.dart';
 import 'package:irecognize/utils/constants.dart';
@@ -26,7 +27,7 @@ class HomePage extends StatelessWidget {
                         .textTheme
                         .headline6
                         ?.copyWith(color: colorScheme.onBackground))),
-            const PersonList(),
+            const PersonGrid(size: 9),
             Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text("Friends I've Talked to Recently",
