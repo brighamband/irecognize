@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
+import 'package:irecognize/components/location_card.dart';
+import 'package:irecognize/components/highlights_card.dart';
+import 'package:irecognize/components/person_card.dart';
+import 'package:irecognize/components/chat_card.dart';
 
 class BioPage extends StatelessWidget {
   const BioPage({
@@ -22,18 +26,65 @@ class BioPage extends StatelessWidget {
         body: !onOwnBio
             ? TabBarView(
                 children: [
-                  Center(
-                    child: Text("Mutual highlights I've shared with $name ..."),
-                  ),
-                  Center(
-                    child: Text("Mutual places I've shared with $name ..."),
-                  ),
-                  Center(
-                    child: Text("Mutual friends I've shared with $name ..."),
-                  ),
-                  Center(
-                    child: Text("Mutual chats I've shared with $name ..."),
-                  ),
+                  Column(children: <Widget>[
+                    Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Text("Highlights",
+                            style: Theme.of(context).textTheme.headline6)),
+                    ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          return HighlightsCard(
+                              title: "Title of highlight",
+                              info: "Filler info here. Can be short or long.");
+                        }),
+                  ]),
+                  Column(children: <Widget>[
+                    Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Text("Highlights",
+                            style: Theme.of(context).textTheme.headline6)),
+                    ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          return LocationCard(
+                              location: "Name of Location Here!");
+                        }),
+                  ]),
+                  Column(children: <Widget>[
+                    Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Text("Highlights",
+                            style: Theme.of(context).textTheme.headline6)),
+                    ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          return PersonCard(name: "Friend #$index");
+                        }),
+                  ]),
+                  Column(children: <Widget>[
+                    Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Text("Highlights",
+                            style: Theme.of(context).textTheme.headline6)),
+                    ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          return ChatCard(
+                              name: "$name",
+                              duration: "5 min.",
+                              time: "10:41 AM",
+                              location: "BNSN W111");
+                        }),
+                  ]),
                 ],
               )
             : const Center(child: Text("FIXME - Display friends and chats???")),
