@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/components/profile_pic.dart';
 import 'package:irecognize/person.dart';
+import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class PersonList extends StatelessWidget {
@@ -10,8 +12,10 @@ class PersonList extends StatelessWidget {
   Widget getPicWithNameCard(BuildContext context, String name) {
     return Card(
       child: ListTile(
-          leading:
-              Icon(Icons.account_circle, color: colorScheme.primary, size: 40),
+          leading: const ProfilePic(
+            small: true,
+            imageUrl: TEST_USER_IMG,
+          ),
           title: Text(name),
           onTap: () => {
                 Navigator.push(
@@ -21,7 +25,7 @@ class PersonList extends StatelessWidget {
               }),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),
-          borderRadius: BorderRadius.circular(10)),
+          borderRadius: BorderRadius.circular(10.0)),
       elevation: 0,
       margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
     );
