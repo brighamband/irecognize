@@ -31,7 +31,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.primary,
         title: const Text('SEARCHBAR HERE...'),
-        actions: !onOwnBio
+        actions: currPage != MY_FRIENDS_PAGE
             ? [
                 IconButton(
                   icon:
