@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
-class BioSubBar extends StatelessWidget implements PreferredSizeWidget {
-  const BioSubBar({required this.name, required this.onOwnBio, Key? key})
+class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
+  const SubNavbar({required this.currPage, required this.name, Key? key})
       : super(key: key);
 
+  final String currPage;
   final String name;
-  final bool onOwnBio;
 
   Widget getBioBar(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
@@ -34,11 +35,11 @@ class BioSubBar extends StatelessWidget implements PreferredSizeWidget {
     ]);
   }
 
-  Widget onlyShowBio(BuildContext context) {
+  Widget onlyRenderBio(BuildContext context) {
     return Column(children: [getBioBar(context)]);
   }
 
-  Widget showBothBioAndMutual(BuildContext context) {
+  Widget renderBothBioAndMutual(BuildContext context) {
     return Column(children: [
       getBioBar(context),
       TabBar(
@@ -57,7 +58,9 @@ class BioSubBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return onOwnBio ? onlyShowBio(context) : showBothBioAndMutual(context);
+    return currPage == PERSON_PAGE
+        ? renderBothBioAndMutual(context)
+        : onlyRenderBio(context);
   }
 
   @override

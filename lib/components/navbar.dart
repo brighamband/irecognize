@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/bio.dart';
-import 'package:irecognize/components/bio_sub_bar.dart';
+import 'package:irecognize/components/sub_navbar.dart';
+import 'package:irecognize/my_friends.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
@@ -9,12 +9,21 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     Key? key,
     this.onBioPage = false,
     this.onOwnBio = false,
+    this.currPage = '',
     this.name = '',
   }) : super(key: key);
 
   final bool onBioPage;
   final bool onOwnBio;
+  final String currPage;
   final String name;
+
+  bool shouldShowSubNavbar() {
+    if (currPage == PERSON_PAGE || currPage == MY_FRIENDS_PAGE) {
+      return true;
+    }
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,31 +35,42 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
             ? [
                 IconButton(
                   icon:
-                      Icon(Icons.account_circle, color: colorScheme.secondary),
+                      Icon(Icons.people_rounded, color: colorScheme.secondary),
                   iconSize: 40,
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              BioPage(onOwnBio: true, name: name)),
-                    );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MyFriendsPage()));
                   },
                 )
               ]
             : null,
-        bottom: onBioPage ? BioSubBar(name: name, onOwnBio: onOwnBio) : null);
+        bottom: shouldShowSubNavbar()
+            ? SubNavbar(currPage: currPage, name: name)
+            : null);
   }
 
   @override
   Size get preferredSize {
-    if (onBioPage) {
-      if (!onOwnBio) {
-        return const Size.fromHeight(
-            kToolbarHeight + BIO_BAR_HEIGHT + MUTUAL_BAR_HEIGHT);
-      }
+    if (currPage == PERSON_PAGE) {
+      return const Size.fromHeight(
+          kToolbarHeight + BIO_BAR_HEIGHT + MUTUAL_BAR_HEIGHT);
+    } else if (currPage == MY_FRIENDS_PAGE) {
       return const Size.fromHeight(kToolbarHeight + BIO_BAR_HEIGHT);
     }
     return const Size.fromHeight(kToolbarHeight);
   }
+
+  // @override
+  // Size get preferredSize {
+  //   if (onBioPage) {
+  //     if (!onOwnBio) {
+  //       return const Size.fromHeight(
+  //           kToolbarHeight + BIO_BAR_HEIGHT + MUTUAL_BAR_HEIGHT);
+  //     }
+  //     return const Size.fromHeight(kToolbarHeight + BIO_BAR_HEIGHT);
+  //   }
+  //   return const Size.fromHeight(kToolbarHeight);
+  // }
 }
