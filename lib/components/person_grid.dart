@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/components/profile_pic.dart';
 import 'package:irecognize/person.dart';
+import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class PersonGrid extends StatelessWidget {
-  const PersonGrid({
-    Key? key,
-  }) : super(key: key);
+  const PersonGrid({Key? key, this.size = 20}) : super(key: key);
 
-  Widget getPicCard(BuildContext context, String name) {
+  final int size;
+
+  Widget getPicCard(BuildContext context, String name, int index) {
     return GestureDetector(
-        child: Card(
-          child: GridTile(
-            child: FittedBox(
-                child: Icon(Icons.account_circle,
-                    color: colorScheme.primary, size: 70)),
+        child: (Card(
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: GridTile(
+                child: ProfilePic(
+              imageUrl: TEST_USER_IMG,
+            )),
           ),
           shape: RoundedRectangleBorder(
               side: BorderSide(color: colorScheme.outline),
-              borderRadius: BorderRadius.circular(10)),
+              borderRadius: BorderRadius.circular(CIRCLE_BORDER_RADIUS)),
           elevation: 0,
-          margin: const EdgeInsets.all(4.0),
-          // margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
-        ),
+        )),
         onTap: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => PersonPage(name: name)));
@@ -36,14 +38,14 @@ class PersonGrid extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 150,
               childAspectRatio: 1,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10),
-          itemCount: 20,
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 5),
+          itemCount: size,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext ctx, index) {
-            return getPicCard(context, "Bruce Lee $index");
+            return getPicCard(context, "Bruce Lee $index", index);
           }),
     );
   }

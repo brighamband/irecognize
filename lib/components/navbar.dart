@@ -9,13 +9,13 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     Key? key,
     this.onBioPage = false,
     this.onOwnBio = false,
-    this.currPage = '',
+    this.currPage,
     this.name = '',
   }) : super(key: key);
 
   final bool onBioPage;
   final bool onOwnBio;
-  final String currPage;
+  final String? currPage;
   final String name;
 
   bool shouldShowSubNavbar() {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/components/profile_pic.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
@@ -6,15 +7,18 @@ class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
   const SubNavbar({required this.currPage, required this.name, Key? key})
       : super(key: key);
 
-  final String currPage;
+  final String? currPage;
   final String name;
 
   Widget getBioBar(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
       Container(
-          margin: const EdgeInsets.all(8.0),
-          child:
-              Icon(Icons.account_circle, color: colorScheme.primary, size: 90)),
+          margin: const EdgeInsets.all(10.0),
+          child: currPage == MY_FRIENDS_PAGE
+              ? const ProfilePic()
+              : const ProfilePic(
+                  imageUrl: TEST_USER_IMG,
+                )),
       Expanded(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -44,7 +48,7 @@ class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
       getBioBar(context),
       TabBar(
         tabs: const [
-          Tab(text: 'Highlights', icon: Icon(Icons.hotel_class_sharp)),
+          Tab(text: 'About', icon: Icon(Icons.info)),
           Tab(text: 'Places', icon: Icon(Icons.location_on)),
           Tab(text: 'Friends', icon: Icon(Icons.people_alt_sharp)),
           Tab(text: 'Chats', icon: Icon(Icons.record_voice_over_sharp))
