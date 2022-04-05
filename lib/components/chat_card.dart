@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/bio.dart';
+import 'package:irecognize/chats.dart';
 import 'package:irecognize/utils/theme.dart';
 
-class PersonCard extends StatefulWidget {
-  const PersonCard({
+class ChatCard extends StatefulWidget {
+  const ChatCard({
     Key? key,
     required this.name,
+    required this.duration,
+    required this.time,
+    required this.location,
   }) : super(key: key);
 
   final String name;
+  final String duration;
+  final String time;
+  final String location;
 
   @override
-  State<StatefulWidget> createState() => _PersonCardState();
+  State<StatefulWidget> createState() => _ChatCardState();
 }
 
-class _PersonCardState extends State<PersonCard> {
-  void goToBioPage() {
+class _ChatCardState extends State<ChatCard> {
+  void goToChatPage() {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => BioPage(onOwnBio: false, name: widget.name)),
+          builder: (context) => ChatPage(onOwnBio: false, name: widget.name)),
     );
   }
 
@@ -27,10 +33,10 @@ class _PersonCardState extends State<PersonCard> {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading:
-            Icon(Icons.account_circle, color: colorScheme.primary, size: 40),
         title: Text(widget.name),
-        onTap: () => goToBioPage(),
+        subtitle: Text(widget.duration),
+        trailing: Text(widget.time),
+        onTap: () => goToChatPage(),
       ),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),
