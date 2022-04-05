@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/home.dart';
+import 'package:irecognize/utils/constants.dart';
+import 'package:irecognize/utils/theme.dart';
 
 void main() {
   runApp(const App());
@@ -8,17 +10,12 @@ void main() {
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
-  static const String appTitle = "iRecognize";
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: appTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: const Color(0xF7F7F7F7),
-      ),
+      title: APP_NAME,
+      theme: ThemeData(scaffoldBackgroundColor: colorScheme.background),
       home: const HomePage(),
     );
   }

@@ -1,83 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:irecognize/bio.dart';
+import 'package:irecognize/components/navbar.dart';
+import 'package:irecognize/components/person_grid.dart';
 import 'package:irecognize/gyro.dart';
-import 'package:irecognize/components/person_card.dart';
+import 'package:irecognize/components/person_list.dart';
+import 'package:irecognize/utils/constants.dart';
+import 'package:irecognize/utils/theme.dart';
 
-// import this to be able to call json.decode()
-import 'dart:convert';
-
-// import this to easily send HTTP request
-import 'package:http/http.dart' as http;
-import 'package:irecognize/models/person.dart';
-
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  List _people = [];
-
-  // Fetch content from the json file
-  Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/sample.json');
-    final data = await json.decode(response);
-    setState(() {
-      _people = data["users"];
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: const Text('ADD SEARCHBAR HERE...'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.account_circle),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        const BioPage(isMine: true, name: 'Brad Pitt')),
-              );
-            },
-          )
-        ],
+      appBar: const Navbar(
+        name: CURRENT_USER_NAME,
       ),
       body: SingleChildScrollView(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
+              children: [
             Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(16.0),
                 child: Text("People Near Me",
-                    style: Theme.of(context).textTheme.headline6)),
-            ListView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) {
-                  return PersonCard(name: "John Doe $index");
-                }),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(color: colorScheme.onBackground))),
+            const PersonGrid(size: 9),
             Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(16.0),
                 child: Text("Friends I've Talked to Recently",
-                    style: Theme.of(context).textTheme.headline6)),
-            ListView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemCount: 7,
-                itemBuilder: (BuildContext context, int index) {
-                  return PersonCard(name: "Sally Mae $index");
-                  // return PersonCard(name: _people[index]["name"]);
-                }),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(color: colorScheme.onBackground))),
+            const PersonList(),
           ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -87,7 +45,9 @@ class _HomePageState extends State<HomePage> {
           );
         },
         tooltip: 'Gyroscope',
-        child: const Icon(Icons.explore),
+        child: const Icon(Icons.my_location),
+        // Icon(Icons.explore)
+        backgroundColor: colorScheme.tertiary,
       ),
     );
   }
