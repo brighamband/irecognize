@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/profile_pic.dart';
+import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
-  const SubNavbar({required this.currPage, required this.name, Key? key})
+  const SubNavbar({required this.currPage, required this.person, Key? key})
       : super(key: key);
 
   final String? currPage;
-  final String name;
+  final PersonModel person;
 
   Widget getBioBar(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
@@ -22,15 +23,14 @@ class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
       Expanded(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(name,
+        Text(person.name,
             style: Theme.of(context)
                 .textTheme
                 .headline5
                 ?.copyWith(color: colorScheme.primary)),
         Padding(
             padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-            child: Text(
-                "Here's more info about me. Here's more info about me...",
+            child: Text(person.tagline,
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium

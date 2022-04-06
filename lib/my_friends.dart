@@ -36,8 +36,7 @@ class MyFriendsPage extends StatelessWidget {
       length: 4,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar:
-            const Navbar(currPage: MY_FRIENDS_PAGE, name: CURRENT_USER_NAME),
+        appBar: Navbar(currPage: MY_FRIENDS_PAGE, person: FAKE_CURRENT_USER),
         body: showFriendsList(context),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
+import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/components/highlights_card.dart';
 import 'package:irecognize/components/location_card.dart';
@@ -9,10 +10,10 @@ import 'package:irecognize/components/person_list.dart';
 class PersonPage extends StatelessWidget {
   const PersonPage({
     Key? key,
-    required this.name,
+    required this.person,
   }) : super(key: key);
 
-  final String name;
+  final PersonModel person;
 
   Widget renderAboutSection(BuildContext context) {
     return Column(children: <Widget>[
@@ -84,7 +85,7 @@ class PersonPage extends StatelessWidget {
       length: 4,
       child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: Navbar(currPage: PERSON_PAGE, name: name),
+          appBar: Navbar(currPage: PERSON_PAGE, person: person),
           body: TabBarView(
             children: [
               renderAboutSection(context),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/sub_navbar.dart';
+import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/my_friends.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
@@ -10,13 +11,13 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     this.onBioPage = false,
     this.onOwnBio = false,
     this.currPage,
-    this.name = '',
+    this.person,
   }) : super(key: key);
 
   final bool onBioPage;
   final bool onOwnBio;
   final String? currPage;
-  final String name;
+  final PersonModel? person;
 
   bool shouldShowSubNavbar() {
     if (currPage == PERSON_PAGE || currPage == MY_FRIENDS_PAGE) {
@@ -47,7 +48,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
               ]
             : null,
         bottom: shouldShowSubNavbar()
-            ? SubNavbar(currPage: currPage, name: name)
+            ? SubNavbar(currPage: currPage, person: person!)
             : null);
   }
 
@@ -61,16 +62,4 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     }
     return const Size.fromHeight(kToolbarHeight);
   }
-
-  // @override
-  // Size get preferredSize {
-  //   if (onBioPage) {
-  //     if (!onOwnBio) {
-  //       return const Size.fromHeight(
-  //           kToolbarHeight + BIO_BAR_HEIGHT + MUTUAL_BAR_HEIGHT);
-  //     }
-  //     return const Size.fromHeight(kToolbarHeight + BIO_BAR_HEIGHT);
-  //   }
-  //   return const Size.fromHeight(kToolbarHeight);
-  // }
 }

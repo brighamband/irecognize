@@ -1,7 +1,10 @@
 class PersonModel {
-  final num id;
-  final String name;
-  final String imageUrl;
+  num id;
+  String name;
+  String tagline;
+  String? imageUrl;
 
-  PersonModel(this.id, this.name, this.imageUrl);
+  PersonModel(this.id, this.name, this.tagline, this.imageUrl);
+
+  PersonModel.noImage(this.id, this.name, this.tagline);
 }
