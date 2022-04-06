@@ -35,7 +35,10 @@ class _ChatCardState extends State<ChatCard> {
       child: ListTile(
         title: Text(widget.name),
         subtitle: Text(widget.duration),
-        trailing: Text(widget.time),
+        trailing: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+          Text(widget.time),
+          Text(widget.location, style: TextStyle(fontSize: 11))
+        ]),
         onTap: () => goToChatPage(),
       ),
       shape: RoundedRectangleBorder(
