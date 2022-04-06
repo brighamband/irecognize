@@ -57,6 +57,9 @@ flutter:
     - assets/data.json
     - assets/brad-pic.jpg
     - assets/compass_icon.png
+    - assets/firstnames_f.json
+    - assets/firstnames_m.json
+    - assets/surnames.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
