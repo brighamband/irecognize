@@ -70,7 +70,7 @@ class PersonPage extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return ChatCard(
-                name: "$name",
+                Person: ,
                 duration: "5 min.",
                 time: "10:41 AM",
                 location: "BNSN W111");
