@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/profile_pic.dart';
+import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/person.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
@@ -9,14 +10,15 @@ class PersonGrid extends StatelessWidget {
 
   final int size;
 
-  Widget getPicCard(BuildContext context, String name, int index) {
+  // Widget getPicCard(BuildContext context, String name, int index) {
+  Widget getPicCard(BuildContext context, PersonModel person) {
     return GestureDetector(
         child: (Card(
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: GridTile(
                 child: ProfilePic(
-              imageUrl: TEST_USER_IMG,
+              imageUrl: person.imageUrl,
             )),
           ),
           shape: RoundedRectangleBorder(
@@ -25,8 +27,10 @@ class PersonGrid extends StatelessWidget {
           elevation: 0,
         )),
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => PersonPage(name: name)));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PersonPage(person: person)));
         });
   }
 
@@ -40,12 +44,13 @@ class PersonGrid extends StatelessWidget {
               childAspectRatio: 1,
               crossAxisSpacing: 5,
               mainAxisSpacing: 5),
-          itemCount: size,
+          itemCount: FAKE_PEOPLE.length,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext ctx, index) {
-            return getPicCard(context, "Bruce Lee $index", index);
+            // return getPicCard(context, "Bruce Lee $index", index);
+            return getPicCard(context, FAKE_PEOPLE[index]);
           }),
     );
   }

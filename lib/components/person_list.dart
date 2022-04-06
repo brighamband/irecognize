@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/profile_pic.dart';
+import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/person.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
@@ -9,19 +10,20 @@ class PersonList extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  Widget getPicWithNameCard(BuildContext context, String name) {
+  // Widget getPicWithNameCard(BuildContext context, String name) {
+  Widget getPicWithNameCard(BuildContext context, PersonModel person) {
     return Card(
       child: ListTile(
           leading: const ProfilePic(
             small: true,
             imageUrl: TEST_USER_IMG,
           ),
-          title: Text(name),
+          title: Text(person.name),
           onTap: () => {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => PersonPage(name: name)))
+                        builder: (context) => PersonPage(person: person)))
               }),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),
@@ -38,7 +40,8 @@ class PersonList extends StatelessWidget {
         shrinkWrap: true,
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
-          return getPicWithNameCard(context, "John Doe $index");
+          // return getPicWithNameCard(context, "John Doe $index");
+          return getPicWithNameCard(context, FAKE_PEOPLE[index]);
         });
   }
 }

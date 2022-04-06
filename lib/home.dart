@@ -12,9 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Navbar(
-        name: CURRENT_USER_NAME,
-      ),
+      appBar: Navbar(person: FAKE_CURRENT_USER),
       body: SingleChildScrollView(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,

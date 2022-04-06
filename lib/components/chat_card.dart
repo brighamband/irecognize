@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/chats.dart';
+import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/theme.dart';
 
-class ChatCard extends StatefulWidget {
+class ChatCard extends StatelessWidget {
   const ChatCard({
     Key? key,
-    required this.name,
+    required this.person,
     required this.duration,
     required this.time,
     required this.location,
   }) : super(key: key);
 
-  final String name;
+  final PersonModel person;
   final String duration;
   final String time;
   final String location;
 
-  @override
-  State<StatefulWidget> createState() => _ChatCardState();
-}
-
-class _ChatCardState extends State<ChatCard> {
-  void goToChatPage() {
+  void goToChatPage(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => ChatPage(onOwnBio: false, name: widget.name)),
+          builder: (context) => ChatPage(onOwnBio: false, person: person)),
     );
   }
 
@@ -33,10 +29,10 @@ class _ChatCardState extends State<ChatCard> {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(widget.name),
-        subtitle: Text(widget.duration),
-        trailing: Text(widget.time),
-        onTap: () => goToChatPage(),
+        title: Text(person.name),
+        subtitle: Text(duration),
+        trailing: Text(time),
+        onTap: () => goToChatPage(context),
       ),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),
