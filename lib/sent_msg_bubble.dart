@@ -21,7 +21,7 @@ class SentMsgBubble extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: colorScheme.tertiary,
+              color: colorScheme.primary,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(18),
                 bottomLeft: Radius.circular(18),
@@ -34,7 +34,7 @@ class SentMsgBubble extends StatelessWidget {
             ),
           ),
         ),
-        CustomPaint(painter: CustomShape((colorScheme.tertiary)!)),
+        CustomPaint(painter: CustomShape((colorScheme.primary)!)),
       ],
     ));
     return Padding(

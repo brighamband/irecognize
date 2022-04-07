@@ -3,6 +3,7 @@ import 'package:irecognize/components/navbar.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/received_msg_bubble.dart';
 import 'package:irecognize/sent_msg_bubble.dart';
+import 'package:irecognize/utils/theme.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({
@@ -39,6 +40,13 @@ class ChatPage extends StatelessWidget {
           SentMsgBubble(message: "Sweet yeah I'll see you there"),
           ReceivedMsgBubble(message: "Ok, see ya!")
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: 'Play back conversation',
+        child: const Icon(Icons.play_arrow),
+        // Icon(Icons.explore)
+        backgroundColor: colorScheme.tertiary,
       ),
     );
   }
