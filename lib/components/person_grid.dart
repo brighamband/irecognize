@@ -21,9 +21,7 @@ class PersonGrid extends StatelessWidget {
               imageUrl: person.imageUrl,
             )),
           ),
-          shape: RoundedRectangleBorder(
-              side: BorderSide(color: colorScheme.outline),
-              borderRadius: BorderRadius.circular(CIRCLE_BORDER_RADIUS)),
+          shape: CircleBorder(side: BorderSide(color: colorScheme.outline)),
           elevation: 0,
         )),
         onTap: () {
