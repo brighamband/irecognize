@@ -71,7 +71,7 @@ class PersonPage extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return ChatCard(
                 person: FAKE_PEOPLE[index],
-                duration: "5 min.",
+                duration: "5 mins",
                 time: "10:41 AM",
                 location: "BNSN W111");
           })
