@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:irecognize/components/person/profile_pic.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/person_page.dart';
+import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class PicNameCard extends StatelessWidget {
@@ -18,12 +19,7 @@ class PicNameCard extends StatelessWidget {
             imageUrl: person.imageUrl,
           ),
           title: Text(person.name),
-          onTap: () => {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => PersonPage(person: person)))
-              }),
+          onTap: () => {goToPage(context, PersonPage(person: person))}),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),
           borderRadius: BorderRadius.circular(10.0)),

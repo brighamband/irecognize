@@ -13,27 +13,32 @@ class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
 
   Widget getBioBar(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-      Container(
-          margin: const EdgeInsets.all(10.0),
+      Padding(
+          padding: const EdgeInsets.only(top: 8.0, bottom: 12.0, left: 16.0),
           child: ProfilePic(
             imageUrl: person.imageUrl,
           )),
       Expanded(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(person.name,
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                ?.copyWith(color: colorScheme.primary)),
-        Padding(
-            padding: const EdgeInsets.only(top: 8.0, right: 8.0),
-            child: Text(person.tagline,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(color: colorScheme.onSurface)))
-      ]))
+          child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(person.name,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            ?.copyWith(color: colorScheme.primary)),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8.0, horizontal: 0.0),
+                        child: Text(person.tagline,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: colorScheme.onSurface)))
+                  ])))
     ]);
   }
 

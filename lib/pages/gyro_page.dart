@@ -4,6 +4,7 @@ import 'package:irecognize/components/person/pic_name_card.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/person_page.dart';
 import 'package:irecognize/utils/constants.dart';
+import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class GyroPage extends StatelessWidget {
@@ -49,11 +50,7 @@ class GyroPage extends StatelessWidget {
           const Padding(padding: EdgeInsets.all(30)),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            PersonPage(person: testPersonFound)));
+                goToPage(context, PersonPage(person: testPersonFound));
               },
               child: const Text("View Bio"),
               style: ElevatedButton.styleFrom(primary: colorScheme.tertiary))

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
 
@@ -25,4 +26,11 @@ List<PersonModel> searchByPerson(String query) {
       .where(
           (person) => person.name.toLowerCase().contains(query.toLowerCase()))
       .toList();
+}
+
+void goToPage(BuildContext context, dynamic pageToVisit) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => pageToVisit),
+  );
 }

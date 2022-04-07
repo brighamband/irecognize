@@ -54,10 +54,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
                       Icon(Icons.people_rounded, color: colorScheme.secondary),
                   iconSize: 40,
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MyFriendsPage()));
+                    goToPage(context, const MyFriendsPage());
                   },
                 )
               ]
@@ -116,11 +113,7 @@ class MySearchDelagte extends SearchDelegate {
           return ListTile(
             onTap: () {
               query = suggestedPerson.name;
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => PersonPage(person: suggestedPerson)),
-              );
+              goToPage(context, PersonPage(person: suggestedPerson));
             },
             title: Text(suggestedPerson.name),
           );

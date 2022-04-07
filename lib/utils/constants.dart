@@ -23,7 +23,6 @@ const double CIRCLE_BORDER_RADIUS = 50.0;
 const String S3_BASE_URL =
     'https://irecognize-profile-pics.s3.us-east-2.amazonaws.com/';
 const String DEFAULT_IMG_URL = S3_BASE_URL + 'DEFAULT_IMG_URL.jpg';
-const String TEST_USER_IMG = r'https://randomuser.me/api/portraits/men/32.jpg';
 const String BYU_CS_STUDENT_TAGLINE =
     "I'm a BYU student taking CS 356.  I love that CS 356 is my only class!";
 
@@ -31,7 +30,7 @@ const String BYU_CS_STUDENT_TAGLINE =
 
 PersonModel CURRENT_USER = PersonModel(
     'Brigham Andersen',
-    "I'm a 23-yr old BYU Student studying Software Engineering and Business.  Excited to meet ya!",
+    "I'm a 23-yr old studying CS and Business @ BYU.  Excited to meet ya!",
     'https://irecognize-profile-pics.s3.us-east-2.amazonaws.com/CURRENT_USER.jpg');
 
 PersonModel ALEXA_URREA = PersonModel('Alexa Urrea', BYU_CS_STUDENT_TAGLINE,

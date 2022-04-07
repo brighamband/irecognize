@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/chats_page.dart';
+import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class ChatCard extends StatelessWidget {
@@ -17,14 +18,6 @@ class ChatCard extends StatelessWidget {
   final String time;
   final String location;
 
-  void goToChatPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => ChatPage(onOwnBio: false, person: person)),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -35,7 +28,8 @@ class ChatCard extends StatelessWidget {
           Text(time),
           Text(location, style: const TextStyle(fontSize: 11))
         ]),
-        onTap: () => goToChatPage(context),
+        onTap: () =>
+            goToPage(context, ChatPage(onOwnBio: false, person: person)),
       ),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),

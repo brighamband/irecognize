@@ -4,6 +4,7 @@ import 'package:irecognize/components/person/person_grid.dart';
 import 'package:irecognize/components/person/person_list.dart';
 import 'package:irecognize/pages/gyro_page.dart';
 import 'package:irecognize/utils/constants.dart';
+import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,10 +40,7 @@ class HomePage extends StatelessWidget {
           ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => GyroPage()),
-          );
+          goToPage(context, GyroPage());
         },
         tooltip: 'Gyroscope',
         child: const Icon(Icons.my_location),
