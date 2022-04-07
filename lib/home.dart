@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person_grid.dart';
+import 'package:irecognize/components/person/person_grid.dart';
 import 'package:irecognize/gyro.dart';
-import 'package:irecognize/components/person_list.dart';
+import 'package:irecognize/components/person/person_list.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const GyroPage()),
+            MaterialPageRoute(builder: (context) => GyroPage()),
           );
         },
         tooltip: 'Gyroscope',

@@ -5,7 +5,7 @@ import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/components/highlights_card.dart';
 import 'package:irecognize/components/location_card.dart';
 import 'package:irecognize/components/chat_card.dart';
-import 'package:irecognize/components/person_list.dart';
+import 'package:irecognize/components/person/person_list.dart';
 
 class PersonPage extends StatelessWidget {
   const PersonPage({

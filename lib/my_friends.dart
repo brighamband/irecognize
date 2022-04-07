@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person_grid.dart';
+import 'package:irecognize/components/person/person_grid.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
