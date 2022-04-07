@@ -44,8 +44,9 @@ class PersonPage extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return LocationCard(
-                location: "Name of Location Here!",
-                url: "https://www.youtube.com/");
+                location: "Wilk Ballroom",
+                url:
+                    "https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221");
           })
     ]);
   }

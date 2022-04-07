@@ -29,7 +29,7 @@ class ChatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text("Name"),
+        title: Text(person.name),
         subtitle: Text(duration),
         trailing: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
           Text(time),
