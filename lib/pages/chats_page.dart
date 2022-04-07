@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
+import 'package:irecognize/components/received_msg_bubble.dart';
+import 'package:irecognize/components/sent_msg_bubble.dart';
 import 'package:irecognize/models/person_model.dart';
-import 'package:irecognize/received_msg_bubble.dart';
-import 'package:irecognize/sent_msg_bubble.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({

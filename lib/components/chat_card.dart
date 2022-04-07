@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/chats.dart';
 import 'package:irecognize/models/person_model.dart';
+import 'package:irecognize/pages/chats_page.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class ChatCard extends StatelessWidget {

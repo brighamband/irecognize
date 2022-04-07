@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/home.dart';
+import 'package:irecognize/pages/home_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 

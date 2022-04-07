@@ -25,7 +25,10 @@ class MyFriendsPage extends StatelessWidget {
                     ?.copyWith(color: colorScheme.onBackground),
                 textAlign: TextAlign.left,
               )),
-          const PersonGrid()
+          PersonGrid(
+            people: MY_FRIENDS,
+            emptyMsg: 'No friends yet',
+          )
         ]));
   }
 
@@ -36,7 +39,7 @@ class MyFriendsPage extends StatelessWidget {
       length: 4,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: Navbar(currPage: MY_FRIENDS_PAGE, person: FAKE_CURRENT_USER),
+        appBar: Navbar(currPage: MY_FRIENDS_PAGE, person: CURRENT_USER),
         body: showFriendsList(context),
       ),
     );

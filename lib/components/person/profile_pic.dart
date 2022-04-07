@@ -16,25 +16,17 @@ class ProfilePic extends StatelessWidget {
     return !small ? PROFILE_PIC_DIMENS : PROFILE_PIC_DIMENS_SM;
   }
 
-  Widget getCustomImage() {
+  @override
+  Widget build(BuildContext context) {
     return ClipRRect(
       child: Image.network(
-        imageUrl!,
-        errorBuilder: (context, error, stackTrace) => getDefaultImage(),
+        imageUrl ?? DEFAULT_IMG_URL,
+        errorBuilder: (context, error, stackTrace) => Icon(Icons.account_circle,
+            color: colorScheme.primary, size: getSize()),
         width: getSize(),
         height: getSize(),
       ),
       borderRadius: BorderRadius.circular(CIRCLE_BORDER_RADIUS),
     );
-  }
-
-  Widget getDefaultImage() {
-    return Icon(Icons.account_circle,
-        color: colorScheme.primary, size: getSize() + 10.0);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return imageUrl != null ? getCustomImage() : getDefaultImage();
   }
 }

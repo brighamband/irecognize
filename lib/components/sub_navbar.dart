@@ -15,11 +15,9 @@ class SubNavbar extends StatelessWidget implements PreferredSizeWidget {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
       Container(
           margin: const EdgeInsets.all(10.0),
-          child: currPage == MY_FRIENDS_PAGE
-              ? const ProfilePic()
-              : const ProfilePic(
-                  imageUrl: TEST_USER_IMG,
-                )),
+          child: ProfilePic(
+            imageUrl: person.imageUrl,
+          )),
       Expanded(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

@@ -5,8 +5,6 @@ import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/components/highlights_card.dart';
 import 'package:irecognize/components/location_card.dart';
 import 'package:irecognize/components/chat_card.dart';
-import 'package:irecognize/components/person/person_list.dart';
-import 'package:flutter/material.dart';
 import 'package:irecognize/components/person/pic_name_card.dart';
 
 class PersonPage extends StatelessWidget {
@@ -61,14 +59,14 @@ class PersonPage extends StatelessWidget {
       ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: 5,
+          itemCount: MY_FRIENDS.length,
           itemBuilder: (BuildContext context, int index) {
-            if (FAKE_PEOPLE[index].name != person.name) {
-              return PicNameCard(person: FAKE_PEOPLE[index]);
+            if (MY_FRIENDS[index].name != person.name) {
+              return PicNameCard(person: MY_FRIENDS[index]);
             } else {
               return PicNameCard(
                   person:
-                      PersonModel(0, 'Fake User', TEMP_TAGLINE, TEST_USER_IMG));
+                      PersonModel('Fake User', TEMP_TAGLINE, TEST_USER_IMG));
             }
           }),
     ]);
@@ -84,16 +82,15 @@ class PersonPage extends StatelessWidget {
           shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
-            if (FAKE_PEOPLE[index].name == person.name) {
+            if (MY_FRIENDS[index].name == person.name) {
               return ChatCard(
-                  person:
-                      PersonModel(0, 'Fake User', TEMP_TAGLINE, TEST_USER_IMG),
+                  person: PersonModel('Fake User', TEMP_TAGLINE, TEST_USER_IMG),
                   duration: "5 mins",
                   time: "10:41 AM",
                   location: "BNSN W111");
             } else {
               return ChatCard(
-                  person: FAKE_PEOPLE[index],
+                  person: MY_FRIENDS[index],
                   duration: "5 mins",
                   time: "10:41 AM",
                   location: "BNSN W111");
