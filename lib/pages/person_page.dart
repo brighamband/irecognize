@@ -16,24 +16,26 @@ class PersonPage extends StatelessWidget {
   final PersonModel person;
 
   Widget renderAboutSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(15),
       ),
       ListView.builder(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          itemCount: 5,
-          itemBuilder: (BuildContext context, int index) {
-            return HighlightsCard(
-                title: "Title of About",
-                info: "Filler info here. Can be short or long.");
-          })
-    ]);
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        itemCount: 7,
+        itemBuilder: (BuildContext context, int index) {
+          return HighlightsCard(
+              title: ABOUT_LIST[index].title, info: ABOUT_LIST[index].info);
+        },
+      ),
+    ]));
   }
 
   Widget renderPlacesSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(
             15), //child: Text("Places", style: Theme.of(context).textTheme.headline6)
@@ -44,15 +46,15 @@ class PersonPage extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return LocationCard(
-                location: "Wilk Ballroom",
-                url:
-                    "https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221");
+                location: PLACES_LIST[index].location,
+                url: PLACES_LIST[index].url);
           })
-    ]);
+    ]));
   }
 
   Widget renderFriendsSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(15),
       ),
@@ -69,11 +71,12 @@ class PersonPage extends StatelessWidget {
                       PersonModel('Fake User', TEMP_TAGLINE, TEST_USER_IMG));
             }
           }),
-    ]);
+    ]));
   }
 
   Widget renderChatsSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(15),
       ),
@@ -82,21 +85,13 @@ class PersonPage extends StatelessWidget {
           shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
-            if (MY_FRIENDS[index].name == person.name) {
-              return ChatCard(
-                  person: PersonModel('Fake User', TEMP_TAGLINE, TEST_USER_IMG),
-                  duration: "5 mins",
-                  time: "10:41 AM",
-                  location: "BNSN W111");
-            } else {
-              return ChatCard(
-                  person: MY_FRIENDS[index],
-                  duration: "5 mins",
-                  time: "10:41 AM",
-                  location: "BNSN W111");
-            }
+            return ChatCard(
+                person: person,
+                duration: CHATS_LIST[index].duration,
+                time: CHATS_LIST[index].time,
+                location: CHATS_LIST[index].location);
           })
-    ]);
+    ]));
   }
 
   @override
