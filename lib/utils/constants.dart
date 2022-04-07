@@ -24,37 +24,84 @@ const String S3_BASE_URL =
     'https://irecognize-profile-pics.s3.us-east-2.amazonaws.com/';
 const String DEFAULT_IMG_URL = S3_BASE_URL + 'DEFAULT_IMG_URL.jpg';
 const String TEST_USER_IMG = r'https://randomuser.me/api/portraits/men/32.jpg';
-const String TEMP_TAGLINE =
-    "I'm a 23-yr old BYU student.  I wanna meet new people!";
+const String BYU_CS_STUDENT_TAGLINE =
+    "I'm a BYU student taking CS 356.  I love that CS 356 is my only class!";
 
 // Start of hard-coded people
 
-PersonModel CURRENT_USER = PersonModel('Brigham Andersen', TEMP_TAGLINE,
+PersonModel CURRENT_USER = PersonModel(
+    'Brigham Andersen',
+    "I'm a 23-yr old BYU Student studying Software Engineering and Business.  Excited to meet ya!",
     'https://irecognize-profile-pics.s3.us-east-2.amazonaws.com/CURRENT_USER.jpg');
 
-PersonModel ALEXA_URREA = PersonModel('Alexa Urrea', TEMP_TAGLINE,
+PersonModel ALEXA_URREA = PersonModel('Alexa Urrea', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SJFP5TFD-800745531fd0-512');
-
+PersonModel SAM_BENNION = PersonModel('Sam Bennion', BYU_CS_STUDENT_TAGLINE,
+    'https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/85213555_1127885937542537_3247095546082492416_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=174925&_nc_ohc=E9Fb031rpUUAX-UbMVs&tn=RteFkLhyY_dF-ZAW&_nc_ht=scontent-lax3-2.xx&oh=00_AT8A5Gi9lQbeXBG9tH-H15WRoAiTIcuS2eddGe-RJdQIJQ&oe=6275645D');
+PersonModel TRACE_HALE = PersonModel(
+    'Trace Hale', BYU_CS_STUDENT_TAGLINE, S3_BASE_URL + 'TRACE_HALE.jpg');
+PersonModel ADAM_LENNING = PersonModel(
+    'Adam Lenning',
+    "TA for CS 356.  I'm a huge fan of UI/UX and Stats!",
+    'https://ca.slack-edge.com/T02S59PFSPM-U02T7VANHPS-d0ea373a42f9-512');
+PersonModel MIKE_JONES = PersonModel(
+    'Mike Jones',
+    'Biggest advocate of HCI in the outdoors!  Skiing is life.',
+    'https://ca.slack-edge.com/T02S59PFSPM-U02S7HAHUS0-539d1cf233c7-512');
+PersonModel ELIJAH_QUARTEY = PersonModel(
+    'Elijah Quartey',
+    BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SJ89NK8B-a350a98b0c15-512');
+PersonModel MADDIE_PETTY = PersonModel('Maddie Petty', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SLGE1B3N-41e414f01aed-512');
+PersonModel HARRISON_BURGESS = PersonModel(
+    'Harrison Burgess',
+    BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SJD2Q7EE-82cf643a6be1-512');
+PersonModel CARTER_MADSEN = PersonModel('Carter Madsen', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SLGBMSQ4-aa49c5405700-512');
+PersonModel TUSTIN_NEILSON = PersonModel(
+    'Tustin Neilson',
+    BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SFH46QLD-583f467533cd-512');
+PersonModel RAND_ALRABADI = PersonModel('Rand Alrabadi', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SF9N5X8D-fcf82c2118a3-512');
+PersonModel JACOB_SEARLE = PersonModel('Jake Searle', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02T1R3R734-b593f39f41f6-512');
+PersonModel DANIEL_TAYLOR = PersonModel('Daniel Taylor', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02TFBK8YHE-1d17e0841420-512');
+PersonModel ETHAN_WALCH = PersonModel('Ethan Walch', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02TD7A2YSW-d20eccae1b3c-512');
+PersonModel NOOR_ASSI = PersonModel('Noor Assi', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SD71NE8P-5891ebbc48f0-512');
+PersonModel DYLAN_PACKHAM = PersonModel('Dylan Packham', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SJ7P16P4-95b3f9dc8a5c-512');
 PersonModel TREY_REYNOLDS = PersonModel(
     "Trey Reynolds",
     "Hit me up if you wanna shoot some hoops!",
     "https://tunisaid.org/wp-content/uploads/2019/03/avataaars-2.png");
-PersonModel TRACE_HALE =
-    PersonModel('Trace Hale', TEMP_TAGLINE, S3_BASE_URL + 'TRACE_HALE.jpg');
+PersonModel JAX_MATTHEWS = PersonModel('Jax Matthews', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SBH3RXAA-c754706d9c9b-512');
 
 // Start of lists of hard-coded people
 
-List<PersonModel> PEOPLE_NEAR_ME = [ALEXA_URREA, TRACE_HALE, TREY_REYNOLDS];
+List<PersonModel> PEOPLE_NEAR_ME = [
+  ALEXA_URREA,
+  SAM_BENNION,
+  TRACE_HALE,
+  TREY_REYNOLDS,
+  ADAM_LENNING
+];
 
 List<PersonModel> FRIENDS_TALKED_TO_RECENTLY = [];
 
 List<PersonModel> MY_FRIENDS = [
-  PersonModel('Billy Joe', TEMP_TAGLINE, TEST_USER_IMG),
-  PersonModel('Jake Snake', TEMP_TAGLINE, TEST_USER_IMG),
-  PersonModel('Lebron James', TEMP_TAGLINE, TEST_USER_IMG),
-  PersonModel('Russell Westbrook', TEMP_TAGLINE, TEST_USER_IMG),
-  PersonModel('Donovan Mitchell', TEMP_TAGLINE, TEST_USER_IMG),
-  PersonModel('Blake Hughes', TEMP_TAGLINE, TEST_USER_IMG),
+  PersonModel('Billy Joe', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG),
+  PersonModel('Jake Snake', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG),
+  PersonModel('Lebron James', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG),
+  PersonModel('Russell Westbrook', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG),
+  PersonModel('Donovan Mitchell', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG),
+  PersonModel('Blake Hughes', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG),
   TREY_REYNOLDS,
   TRACE_HALE
 ];

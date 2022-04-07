@@ -33,8 +33,8 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.primary,
         systemOverlayStyle:
-            const SystemUiOverlayStyle(statusBarColor: Colors.white),
-        title: const Text('SEARCHBAR HERE...'),
+            SystemUiOverlayStyle(statusBarColor: colorScheme.surface),
+        title: const Text('SEARCHBAR'),
         actions: currPage != MY_FRIENDS_PAGE
             ? [
                 IconButton(

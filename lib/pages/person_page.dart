@@ -67,8 +67,8 @@ class PersonPage extends StatelessWidget {
               return PicNameCard(person: MY_FRIENDS[index]);
             } else {
               return PicNameCard(
-                  person:
-                      PersonModel('Fake User', TEMP_TAGLINE, TEST_USER_IMG));
+                  person: PersonModel(
+                      'Fake User', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG));
             }
           }),
     ]));
