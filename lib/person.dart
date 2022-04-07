@@ -36,7 +36,8 @@ class PersonPage extends StatelessWidget {
   }
 
   Widget renderPlacesSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(
             15), //child: Text("Places", style: Theme.of(context).textTheme.headline6)
@@ -50,11 +51,12 @@ class PersonPage extends StatelessWidget {
                 location: PLACES_LIST[index].location,
                 url: PLACES_LIST[index].url);
           })
-    ]);
+    ]));
   }
 
   Widget renderFriendsSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(15),
       ),
@@ -71,11 +73,12 @@ class PersonPage extends StatelessWidget {
                       PersonModel(0, 'Fake User', TEMP_TAGLINE, TEST_USER_IMG));
             }
           }),
-    ]);
+    ]));
   }
 
   Widget renderChatsSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(15),
       ),
@@ -90,7 +93,7 @@ class PersonPage extends StatelessWidget {
                 time: CHATS_LIST[index].time,
                 location: CHATS_LIST[index].location);
           })
-    ]);
+    ]));
   }
 
   @override
