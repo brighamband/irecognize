@@ -23,6 +23,7 @@ class PersonPage extends StatelessWidget {
       ),
       ListView.builder(
         scrollDirection: Axis.vertical,
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 7,
         itemBuilder: (BuildContext context, int index) {
@@ -44,6 +45,7 @@ class PersonPage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           itemCount: 5,
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             return LocationCard(
                 location: PLACES_LIST[index].location,
@@ -81,6 +83,7 @@ class PersonPage extends StatelessWidget {
         padding: const EdgeInsets.all(15),
       ),
       ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           itemCount: 5,
