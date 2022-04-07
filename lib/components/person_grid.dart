@@ -10,7 +10,6 @@ class PersonGrid extends StatelessWidget {
 
   final int size;
 
-  // Widget getPicCard(BuildContext context, String name, int index) {
   Widget getPicCard(BuildContext context, PersonModel person) {
     return GestureDetector(
         child: (Card(
@@ -47,7 +46,6 @@ class PersonGrid extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext ctx, index) {
-            // return getPicCard(context, "Bruce Lee $index", index);
             return getPicCard(context, FAKE_PEOPLE[index]);
           }),
     );

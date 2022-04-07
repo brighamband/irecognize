@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:irecognize/components/sub_navbar.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/my_friends.dart';
@@ -31,6 +32,8 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.primary,
+        systemOverlayStyle:
+            const SystemUiOverlayStyle(statusBarColor: Colors.white),
         title: const Text('SEARCHBAR HERE...'),
         actions: currPage != MY_FRIENDS_PAGE
             ? [

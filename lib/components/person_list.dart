@@ -10,7 +10,6 @@ class PersonList extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  // Widget getPicWithNameCard(BuildContext context, String name) {
   Widget getPicWithNameCard(BuildContext context, PersonModel person) {
     return Card(
       child: ListTile(
@@ -40,7 +39,6 @@ class PersonList extends StatelessWidget {
         shrinkWrap: true,
         itemCount: 5,
         itemBuilder: (BuildContext context, int index) {
-          // return getPicWithNameCard(context, "John Doe $index");
           return getPicWithNameCard(context, FAKE_PEOPLE[index]);
         });
   }
