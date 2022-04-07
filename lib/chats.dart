@@ -20,12 +20,24 @@ class ChatPage extends StatelessWidget {
       appBar: Navbar(onBioPage: false, onOwnBio: onOwnBio, person: person),
       body: ListView(
         children: const [
-          SentMsgBubble(message: "Hello"),
-          ReceivedMsgBubble(message: "Hi, how are you"),
-          SentMsgBubble(message: "I am great how are you doing"),
-          ReceivedMsgBubble(message: "I am also fine"),
-          SentMsgBubble(message: "Can we meet tomorrow?"),
-          ReceivedMsgBubble(message: "Yes, of course we will meet tomorrow"),
+          SentMsgBubble(message: "Hey! What's up?"),
+          ReceivedMsgBubble(
+              message:
+                  "Hey, nothing much, just came to eat my  lunch. Did you finish that 312 assignment yet?"),
+          SentMsgBubble(message: "Not yet... working on it lol"),
+          ReceivedMsgBubble(
+              message: "Yeah that's how it goes. I'm almost done with it."),
+          SentMsgBubble(
+              message: "Oh no way!? Wanna meet tomorrow to work on it?"),
+          ReceivedMsgBubble(
+              message:
+                  "Sure! By the way I think I'm gonna go see Multiverse of madness next Friday. Wanna come?"),
+          SentMsgBubble(
+              message: "Yes I've totally been wanting to see that! What time?"),
+          ReceivedMsgBubble(
+              message: "I'm going to the 3:15 showing at the Orem Cinnemark."),
+          SentMsgBubble(message: "Sweet yeah I'll see you there"),
+          ReceivedMsgBubble(message: "Ok, see ya!")
         ],
       ),
     );

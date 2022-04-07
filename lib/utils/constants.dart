@@ -36,13 +36,15 @@ List<PersonModel> FAKE_PEOPLE = [
 ];
 
 List<AboutModel> ABOUT_LIST = [
-  AboutModel(0, 'IMPORTANT',
-      'Invited you to his party tomorrow at 7:00pm at his house!'),
-  AboutModel(1, 'How You Met', 'Met in CS 235 2 years ago'),
-  AboutModel(2, 'Birthday', 'July 23'),
-  AboutModel(3, 'DO NOT TALK ABOUT', 'The color green'),
-  AboutModel(4, "Marital Status", "Married"),
-  AboutModel(5, "Social Media", "@instagramHandle\n@twitterHandle")
+  AboutModel(0, 'Conversation Reminders',
+      'Ask him how his 340 midterm went today.\nWish him luck for his job interview with Amazon.'),
+  AboutModel(
+      1, 'Events', 'Invited you to his party tomorrow at 7:00pm at his house!'),
+  AboutModel(2, 'How You Met', 'Met in CS 235 2 years ago'),
+  AboutModel(3, 'Birthday', 'July 23'),
+  AboutModel(4, 'DO NOT TALK ABOUT', 'The color green'),
+  AboutModel(5, "Marital Status", "Married"),
+  AboutModel(6, "Social Media", "@instagramHandle\n@twitterHandle")
 ];
 
 List<PlacesModel> PLACES_LIST = [

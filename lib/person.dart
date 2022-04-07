@@ -18,20 +18,21 @@ class PersonPage extends StatelessWidget {
   final PersonModel person;
 
   Widget renderAboutSection(BuildContext context) {
-    return Column(children: <Widget>[
+    return SingleChildScrollView(
+        child: Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.all(15),
       ),
       ListView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        itemCount: 6,
+        itemCount: 7,
         itemBuilder: (BuildContext context, int index) {
           return HighlightsCard(
               title: ABOUT_LIST[index].title, info: ABOUT_LIST[index].info);
         },
       ),
-    ]);
+    ]));
   }
 
   Widget renderPlacesSection(BuildContext context) {

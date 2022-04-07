@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/custom_shape.dart';
+import 'package:irecognize/utils/theme.dart';
 
 class SentMsgBubble extends StatelessWidget {
   const SentMsgBubble({
@@ -20,7 +21,7 @@ class SentMsgBubble extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: Colors.cyan[900],
+              color: colorScheme.tertiary,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(18),
                 bottomLeft: Radius.circular(18),
@@ -33,7 +34,7 @@ class SentMsgBubble extends StatelessWidget {
             ),
           ),
         ),
-        CustomPaint(painter: CustomShape((Colors.cyan[900])!)),
+        CustomPaint(painter: CustomShape((colorScheme.tertiary)!)),
       ],
     ));
     return Padding(
