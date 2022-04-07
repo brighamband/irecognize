@@ -6,6 +6,8 @@ import 'package:irecognize/components/highlights_card.dart';
 import 'package:irecognize/components/location_card.dart';
 import 'package:irecognize/components/chat_card.dart';
 import 'package:irecognize/components/person/person_list.dart';
+import 'package:flutter/material.dart';
+import 'package:irecognize/components/person/pic_name_card.dart';
 
 class PersonPage extends StatelessWidget {
   const PersonPage({
@@ -26,7 +28,7 @@ class PersonPage extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return HighlightsCard(
-                title: "Title of highlight",
+                title: "Title of About",
                 info: "Filler info here. Can be short or long.");
           })
     ]);
@@ -56,7 +58,19 @@ class PersonPage extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.all(15),
       ),
-      const PersonList()
+      ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 5,
+          itemBuilder: (BuildContext context, int index) {
+            if (FAKE_PEOPLE[index].name != person.name) {
+              return PicNameCard(person: FAKE_PEOPLE[index]);
+            } else {
+              return PicNameCard(
+                  person:
+                      PersonModel(0, 'Fake User', TEMP_TAGLINE, TEST_USER_IMG));
+            }
+          }),
     ]);
   }
 
@@ -70,11 +84,20 @@ class PersonPage extends StatelessWidget {
           shrinkWrap: true,
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
-            return ChatCard(
-                person: FAKE_PEOPLE[index],
-                duration: "5 mins",
-                time: "10:41 AM",
-                location: "BNSN W111");
+            if (FAKE_PEOPLE[index].name == person.name) {
+              return ChatCard(
+                  person:
+                      PersonModel(0, 'Fake User', TEMP_TAGLINE, TEST_USER_IMG),
+                  duration: "5 mins",
+                  time: "10:41 AM",
+                  location: "BNSN W111");
+            } else {
+              return ChatCard(
+                  person: FAKE_PEOPLE[index],
+                  duration: "5 mins",
+                  time: "10:41 AM",
+                  location: "BNSN W111");
+            }
           })
     ]);
   }
