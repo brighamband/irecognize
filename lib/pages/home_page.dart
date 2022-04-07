@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                         .headline6
                         ?.copyWith(color: colorScheme.onBackground))),
             PersonList(
-                people: FRIENDS_TALKED_TO_RECENTLY,
+                people: MY_TALKED_TO_RECENTLY,
                 emptyMsg: 'Sadly no one... Go change it!'),
           ])),
       floatingActionButton: FloatingActionButton(

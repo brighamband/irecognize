@@ -9,7 +9,7 @@ import 'package:irecognize/utils/theme.dart';
 class GyroPage extends StatelessWidget {
   GyroPage({Key? key}) : super(key: key);
 
-  final PersonModel testPersonFound = TREY_REYNOLDS;
+  final PersonModel testPersonFound = SAM_BENNION;
 
   @override
   Widget build(BuildContext context) {

@@ -4,6 +4,7 @@ import 'package:irecognize/components/sub_navbar.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/my_friends_page.dart';
 import 'package:irecognize/utils/constants.dart';
+import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 import '../pages/home_page.dart';
@@ -78,15 +79,6 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-PersonModel? findByName(String name) {
-  for (var person in MY_FRIENDS) {
-    if (person.name == name) {
-      return person;
-    }
-  }
-  return null;
-}
-
 class MySearchDelagte extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -111,37 +103,26 @@ class MySearchDelagte extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     return const Center();
-    // var person = findByName(query);
-    // if (person == null) {
-    //   return HomePage();
-    // }
-    // return PersonPage(person: person);
-    // // TODO: implement buildResults
-    // throw UnimplementedError();
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<PersonModel> suggestions = MY_FRIENDS
-        .where((element) =>
-            element.name.toLowerCase().contains(query.toLowerCase()))
-        .toList();
+    List<PersonModel> suggestedPeople = searchByPerson(query);
 
     return ListView.builder(
-        itemCount: suggestions.length,
+        itemCount: suggestedPeople.length,
         itemBuilder: (context, index) {
-          final suggestion = suggestions[index];
+          final suggestedPerson = suggestedPeople[index];
           return ListTile(
             onTap: () {
-              query = suggestion.name;
-              // showResults(context);
+              query = suggestedPerson.name;
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => PersonPage(person: suggestion)),
+                    builder: (context) => PersonPage(person: suggestedPerson)),
               );
             },
-            title: Text(suggestion.name),
+            title: Text(suggestedPerson.name),
           );
         });
   }

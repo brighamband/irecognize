@@ -76,20 +76,16 @@ PersonModel NOOR_ASSI = PersonModel('Noor Assi', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SD71NE8P-5891ebbc48f0-512');
 PersonModel DYLAN_PACKHAM = PersonModel('Dylan Packham', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SJ7P16P4-95b3f9dc8a5c-512');
-PersonModel TREY_REYNOLDS = PersonModel(
-    "Trey Reynolds",
-    "Hit me up if you wanna shoot some hoops!",
-    "https://tunisaid.org/wp-content/uploads/2019/03/avataaars-2.png");
 PersonModel JAX_MATTHEWS = PersonModel('Jax Matthews', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SBH3RXAA-c754706d9c9b-512');
 
 // Start of lists of hard-coded people
 
 List<PersonModel> PEOPLE_NEAR_ME = [
+  // List of people near the current user
   ALEXA_URREA,
   SAM_BENNION,
   TRACE_HALE,
-  TREY_REYNOLDS,
   ADAM_LENNING,
   MIKE_JONES,
   ELIJAH_QUARTEY,
@@ -103,26 +99,50 @@ List<PersonModel> PEOPLE_NEAR_ME = [
   ETHAN_WALCH,
   NOOR_ASSI,
   DYLAN_PACKHAM,
-  TREY_REYNOLDS,
   JAX_MATTHEWS
 ];
 
-List<PersonModel> FRIENDS_TALKED_TO_RECENTLY = [
+List<PersonModel> MY_TALKED_TO_RECENTLY = [
+  // List of people who have recently talked to the current user
   ALEXA_URREA,
   SAM_BENNION,
   MIKE_JONES,
-  TREY_REYNOLDS
+  TRACE_HALE
 ];
 
-List<PersonModel> MY_FRIENDS = [
+List<PersonModel> FRIENDS_NETWORK = [
+  // Network of friends
+  // Use getMyFriends() in helpers to get list from perspective of a certain person
+  CURRENT_USER,
   ALEXA_URREA,
   SAM_BENNION,
   HARRISON_BURGESS,
   MIKE_JONES,
   ETHAN_WALCH,
   DYLAN_PACKHAM,
-  TREY_REYNOLDS,
   TRACE_HALE
+];
+
+List<PersonModel> ALL_PEOPLE = [
+  // List of all people including current user
+  CURRENT_USER,
+  ALEXA_URREA,
+  SAM_BENNION,
+  TRACE_HALE,
+  ADAM_LENNING,
+  MIKE_JONES,
+  ELIJAH_QUARTEY,
+  MADDIE_PETTY,
+  HARRISON_BURGESS,
+  CARTER_MADSEN,
+  TUSTIN_NEILSON,
+  RAND_ALRABADI,
+  JACOB_SEARLE,
+  DANIEL_TAYLOR,
+  ETHAN_WALCH,
+  NOOR_ASSI,
+  DYLAN_PACKHAM,
+  JAX_MATTHEWS
 ];
 
 List<AboutModel> ABOUT_LIST = [
@@ -144,7 +164,7 @@ List<PlacesModel> PLACES_LIST = [
       'https://www.google.com/maps/place/James+E.+Talmage+Math+Sciences%2FComputer+Bldg,+Provo,+UT+84604/@40.2494007,-111.6530764,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90ba5529a62b:0x12ffaaa86ee53588!8m2!3d40.2494007!4d-111.6508877'),
   PlacesModel("Penguin Brothers Ice Cream Shop",
       'https://www.google.com/maps/place/Penguin+Brothers+%7C+Dessert+Catering+and+Ice+Cream+Shop/@40.2510901,-111.658935,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90a37b46802d:0xe81c432303d47eba!8m2!3d40.2510899!4d-111.6567818'),
-  PlacesModel("Kiwanis park",
+  PlacesModel("Kiwanis Park",
       'https://www.google.com/maps/place/Kiwanis+Park/@40.246933,-111.6419627,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90c853a996c7:0xd0555ec0fe7f4aca!8m2!3d40.246933!4d-111.639774'),
   PlacesModel("Afuego Fridays",
       'https://www.google.com/maps/place/Afuego+Fridays/@40.2565867,-111.6738212,17z/data=!3m1!4b1!4m5!3m4!1s0x874d975756dd0785:0x7a126a98d757156c!8m2!3d40.2565867!4d-111.6716325')

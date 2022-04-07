@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
 import 'package:irecognize/components/person/person_grid.dart';
 import 'package:irecognize/utils/constants.dart';
+import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class MyFriendsPage extends StatelessWidget {
@@ -26,7 +27,7 @@ class MyFriendsPage extends StatelessWidget {
                 textAlign: TextAlign.left,
               )),
           PersonGrid(
-            people: MY_FRIENDS,
+            people: getMyFriends(),
             emptyMsg: 'No friends yet',
           )
         ]));

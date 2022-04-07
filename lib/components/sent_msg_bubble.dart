@@ -34,7 +34,7 @@ class SentMsgBubble extends StatelessWidget {
             ),
           ),
         ),
-        CustomPaint(painter: CustomShape((colorScheme.primary)!)),
+        CustomPaint(painter: CustomShape(colorScheme.primary)),
       ],
     ));
     return Padding(

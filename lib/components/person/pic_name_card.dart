@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:irecognize/components/person/profile_pic.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/person_page.dart';
-import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class PicNameCard extends StatelessWidget {
@@ -14,9 +13,9 @@ class PicNameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-          leading: const ProfilePic(
+          leading: ProfilePic(
             small: true,
-            imageUrl: TEST_USER_IMG,
+            imageUrl: person.imageUrl,
           ),
           title: Text(person.name),
           onTap: () => {

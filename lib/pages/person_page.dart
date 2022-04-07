@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
+import 'package:irecognize/components/person/person_list.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/components/highlights_card.dart';
 import 'package:irecognize/components/location_card.dart';
 import 'package:irecognize/components/chat_card.dart';
 import 'package:irecognize/components/person/pic_name_card.dart';
+import 'package:irecognize/utils/helpers.dart';
 
 class PersonPage extends StatelessWidget {
   const PersonPage({
@@ -17,9 +19,9 @@ class PersonPage extends StatelessWidget {
 
   Widget renderAboutSection(BuildContext context) {
     return SingleChildScrollView(
-        child: Column(children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.all(15),
+        child: Column(children: [
+      const Padding(
+        padding: EdgeInsets.all(15),
       ),
       ListView.builder(
         scrollDirection: Axis.vertical,
@@ -36,10 +38,9 @@ class PersonPage extends StatelessWidget {
 
   Widget renderPlacesSection(BuildContext context) {
     return SingleChildScrollView(
-        child: Column(children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.all(
-            15), //child: Text("Places", style: Theme.of(context).textTheme.headline6)
+        child: Column(children: [
+      const Padding(
+        padding: EdgeInsets.all(15),
       ),
       ListView.builder(
           scrollDirection: Axis.vertical,
@@ -56,31 +57,19 @@ class PersonPage extends StatelessWidget {
 
   Widget renderFriendsSection(BuildContext context) {
     return SingleChildScrollView(
-        child: Column(children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.all(15),
+        child: Column(children: [
+      const Padding(
+        padding: EdgeInsets.symmetric(vertical: 15.0),
       ),
-      ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: MY_FRIENDS.length,
-          itemBuilder: (BuildContext context, int index) {
-            if (MY_FRIENDS[index].name != person.name) {
-              return PicNameCard(person: MY_FRIENDS[index]);
-            } else {
-              return PicNameCard(
-                  person: PersonModel(
-                      'Fake User', BYU_CS_STUDENT_TAGLINE, TEST_USER_IMG));
-            }
-          }),
+      PersonList(people: getTheirFriends(person), emptyMsg: 'No mutual friends')
     ]));
   }
 
   Widget renderChatsSection(BuildContext context) {
     return SingleChildScrollView(
-        child: Column(children: <Widget>[
-      Padding(
-        padding: const EdgeInsets.all(15),
+        child: Column(children: [
+      const Padding(
+        padding: EdgeInsets.symmetric(vertical: 15.0),
       ),
       ListView.builder(
           physics: const NeverScrollableScrollPhysics(),

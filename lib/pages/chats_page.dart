@@ -36,7 +36,7 @@ class ChatPage extends StatelessWidget {
           SentMsgBubble(
               message: "Yes I've totally been wanting to see that! What time?"),
           ReceivedMsgBubble(
-              message: "I'm going to the 3:15 showing at the Orem Cinnemark."),
+              message: "I'm going to the 3:15 showing at the Orem Cinemark."),
           SentMsgBubble(message: "Sweet yeah I'll see you there"),
           ReceivedMsgBubble(message: "Ok, see ya!")
         ],
