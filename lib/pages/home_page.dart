@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/navbar.dart';
 import 'package:irecognize/components/person/person_grid.dart';
-import 'package:irecognize/gyro.dart';
 import 'package:irecognize/components/person/person_list.dart';
+import 'package:irecognize/pages/gyro_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Navbar(person: FAKE_CURRENT_USER),
+      appBar: Navbar(person: CURRENT_USER),
       body: SingleChildScrollView(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
                         .textTheme
                         .headline6
                         ?.copyWith(color: colorScheme.onBackground))),
-            const PersonGrid(size: 9),
+            PersonGrid(people: PEOPLE_NEAR_ME, emptyMsg: "No one's around me"),
             Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text("Friends I've Talked to Recently",
@@ -33,7 +33,9 @@ class HomePage extends StatelessWidget {
                         .textTheme
                         .headline6
                         ?.copyWith(color: colorScheme.onBackground))),
-            const PersonList(),
+            PersonList(
+                people: FRIENDS_TALKED_TO_RECENTLY,
+                emptyMsg: 'Sadly no one... Go change it!'),
           ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -44,7 +46,6 @@ class HomePage extends StatelessWidget {
         },
         tooltip: 'Gyroscope',
         child: const Icon(Icons.my_location),
-        // Icon(Icons.explore)
         backgroundColor: colorScheme.tertiary,
       ),
     );

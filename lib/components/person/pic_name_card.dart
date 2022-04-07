@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/person/profile_pic.dart';
 import 'package:irecognize/models/person_model.dart';
-import 'package:irecognize/person.dart';
+import 'package:irecognize/pages/person_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 

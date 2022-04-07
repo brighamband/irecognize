@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:irecognize/components/sub_navbar.dart';
 import 'package:irecognize/home.dart';
 import 'package:irecognize/models/person_model.dart';
-import 'package:irecognize/my_friends.dart';
+import 'package:irecognize/pages/my_friends_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
