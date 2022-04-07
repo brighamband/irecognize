@@ -31,6 +31,29 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     return false;
   }
 
+  Widget getSearchIcon(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        Icons.search,
+        color: colorScheme.primary,
+      ),
+      iconSize: 30,
+      onPressed: () {
+        showSearch(context: context, delegate: MySearchDelagte());
+      },
+    );
+  }
+
+  Widget getMyFriendsIcon(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.people_rounded, color: colorScheme.secondary),
+      iconSize: 40,
+      onPressed: () {
+        goToPage(context, const MyFriendsPage());
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -40,25 +63,8 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
             SystemUiOverlayStyle(statusBarColor: colorScheme.surface),
         title: const Text('SEARCHBAR'),
         actions: currPage != MY_FRIENDS_PAGE
-            ? [
-                IconButton(
-                    onPressed: () {
-                      showSearch(context: context, delegate: MySearchDelagte());
-                    },
-                    icon: Icon(
-                      Icons.search,
-                      color: colorScheme.secondary,
-                    )),
-                IconButton(
-                  icon:
-                      Icon(Icons.people_rounded, color: colorScheme.secondary),
-                  iconSize: 40,
-                  onPressed: () {
-                    goToPage(context, const MyFriendsPage());
-                  },
-                )
-              ]
-            : null,
+            ? [getSearchIcon(context), getMyFriendsIcon(context)]
+            : [getSearchIcon(context)],
         bottom: shouldShowSubNavbar()
             ? SubNavbar(currPage: currPage, person: person!)
             : null);

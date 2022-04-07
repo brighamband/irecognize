@@ -37,7 +37,7 @@ class ReceivedMsgBubble extends StatelessWidget {
             ),
             child: Text(
               message,
-              style: const TextStyle(color: Colors.black, fontSize: 14),
+              style: TextStyle(color: Colors.grey[900], fontSize: 14),
             ),
           ),
         ),

@@ -30,7 +30,7 @@ class SentMsgBubble extends StatelessWidget {
             ),
             child: Text(
               message,
-              style: const TextStyle(color: Colors.white, fontSize: 14),
+              style: TextStyle(color: colorScheme.surface, fontSize: 14),
             ),
           ),
         ),

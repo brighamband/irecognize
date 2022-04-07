@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/utils/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LocationCard extends StatefulWidget {
+class LocationCard extends StatelessWidget {
   const LocationCard({
     Key? key,
     required this.location,
@@ -12,17 +13,12 @@ class LocationCard extends StatefulWidget {
   final String url;
 
   @override
-  State<StatefulWidget> createState() => _LocationCardState();
-}
-
-class _LocationCardState extends State<LocationCard> {
-  @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-          leading: const Icon(Icons.location_pin, color: Colors.pink),
-          title: Text(widget.location),
-          onTap: () => _launchURL(widget.url)),
+          leading: Icon(Icons.location_pin, color: colorScheme.tertiary),
+          title: Text(location),
+          onTap: () => _launchURL(url)),
     );
   }
 
