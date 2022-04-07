@@ -110,11 +110,12 @@ class MySearchDelagte extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    var person = findByName(query);
-    if (person == null) {
-      return HomePage();
-    }
-    return new PersonPage(person: person);
+    return const Center();
+    // var person = findByName(query);
+    // if (person == null) {
+    //   return HomePage();
+    // }
+    // return PersonPage(person: person);
     // // TODO: implement buildResults
     // throw UnimplementedError();
   }
@@ -127,13 +128,18 @@ class MySearchDelagte extends SearchDelegate {
     return ListView.builder(
         itemCount: suggestions.length,
         itemBuilder: (context, index) {
-          final suggestion = suggestions[index].name;
+          final suggestion = suggestions[index];
           return ListTile(
             onTap: () {
-              query = suggestion;
-              showResults(context);
+              query = suggestion.name;
+              // showResults(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PersonPage(person: suggestion)),
+              );
             },
-            title: Text(suggestion),
+            title: Text(suggestion.name),
           );
         });
   }
