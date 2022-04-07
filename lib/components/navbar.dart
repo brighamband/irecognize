@@ -122,8 +122,10 @@ class MySearchDelagte extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<PersonModel> suggestions =
-        MY_FRIENDS.where((element) => element.name.contains(query)).toList();
+    List<PersonModel> suggestions = MY_FRIENDS
+        .where((element) =>
+            element.name.toLowerCase().contains(query.toLowerCase()))
+        .toList();
 
     return ListView.builder(
         itemCount: suggestions.length,
