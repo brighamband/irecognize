@@ -33,7 +33,7 @@ class ChatCard extends StatelessWidget {
         subtitle: Text(duration),
         trailing: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
           Text(time),
-          Text(location, style: TextStyle(fontSize: 11))
+          Text(location, style: const TextStyle(fontSize: 11))
         ]),
         onTap: () => goToChatPage(context),
       ),
