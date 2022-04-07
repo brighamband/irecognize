@@ -7,7 +7,7 @@ import 'package:irecognize/pages/my_friends_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
-import 'package:irecognize/person.dart';
+import '../pages/person_page.dart';
 
 class Navbar extends StatelessWidget implements PreferredSizeWidget {
   const Navbar({
@@ -36,8 +36,8 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.primary,
         systemOverlayStyle:
-            const SystemUiOverlayStyle(statusBarColor: Colors.white),
-        title: const Text("iRecognize"),
+            SystemUiOverlayStyle(statusBarColor: colorScheme.surface),
+        title: const Text('SEARCHBAR'),
         actions: currPage != MY_FRIENDS_PAGE
             ? [
                 IconButton(
@@ -79,7 +79,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 PersonModel? findByName(String name) {
-  for (var person in FAKE_PEOPLE) {
+  for (var person in MY_FRIENDS) {
     if (person.name == name) {
       return person;
     }
@@ -122,7 +122,7 @@ class MySearchDelagte extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List<PersonModel> suggestions =
-        FAKE_PEOPLE.where((element) => element.name.contains(query)).toList();
+        MY_FRIENDS.where((element) => element.name.contains(query)).toList();
 
     return ListView.builder(
         itemCount: suggestions.length,
