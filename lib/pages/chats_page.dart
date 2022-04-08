@@ -11,17 +11,19 @@ class ChatPage extends StatelessWidget {
     Key? key,
     required this.onOwnBio,
     required this.person,
+    required this.convo,
   }) : super(key: key);
 
   final bool onOwnBio;
   final PersonModel person;
+  final List<StatelessWidget> convo;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Navbar(onBioPage: false, onOwnBio: onOwnBio, person: person),
       body: ListView(
-        children: BASIC_CONVO,
+        children: convo,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

@@ -11,12 +11,14 @@ class ChatCard extends StatelessWidget {
     required this.duration,
     required this.time,
     required this.location,
+    required this.convo,
   }) : super(key: key);
 
   final PersonModel person;
   final String duration;
   final String time;
   final String location;
+  final List<StatelessWidget> convo;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +31,13 @@ class ChatCard extends StatelessWidget {
         //   Text(time),
         //   Text(location, style: const TextStyle(fontSize: 11))
         // ]),
-        onTap: () =>
-            goToPage(context, ChatPage(onOwnBio: false, person: person)),
+        onTap: () => goToPage(
+            context,
+            ChatPage(
+              onOwnBio: false,
+              person: person,
+              convo: convo,
+            )),
       ),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: colorScheme.outline),

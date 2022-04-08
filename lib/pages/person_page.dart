@@ -79,10 +79,12 @@ class PersonPage extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return ChatCard(
-                person: person,
-                duration: CHATS_LIST[index].duration,
-                time: CHATS_LIST[index].time,
-                location: CHATS_LIST[index].location);
+              person: person,
+              duration: CHATS_LIST[index].duration,
+              time: CHATS_LIST[index].time,
+              location: CHATS_LIST[index].location,
+              convo: CHATS_LIST[index].convo,
+            );
           })
     ]));
   }

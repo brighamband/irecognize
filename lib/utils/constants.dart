@@ -182,18 +182,18 @@ List<PlacesModel> PLACES_LIST = [
 ];
 
 List<ChatModel> CHATS_LIST = [
-  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL"),
-  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB"),
-  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace"),
-  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park"),
-  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB"),
+  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL", BASIC_CONVO),
+  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB", BASIC_CONVO),
+  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace", BASIC_CONVO),
+  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park", BASIC_CONVO),
+  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB", BASIC_CONVO),
 ];
 
 List<StatelessWidget> BASIC_CONVO = const [
   SentMsgBubble(message: "Hey! What's up?"),
   ReceivedMsgBubble(
       message:
-          "Hey, nothing much, just came to eat my  lunch. Did you finish that 312 assignment yet?"),
+          "Hey, nothing much, just came to eat my  lunch. Did you finish that 340 assignment yet?"),
   SentMsgBubble(message: "Not yet... working on it lol"),
   ReceivedMsgBubble(
       message: "Yeah that's how it goes. I'm almost done with it."),
@@ -255,12 +255,12 @@ List<PlacesModel> REFRESH_PLACES = [
 ];
 
 List<ChatModel> REFRESH_CHATS = [
-  ChatModel("1 min", '1 min ago', "MARB 130"),
-  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL"),
-  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB"),
-  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace"),
-  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park"),
-  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB"),
+  ChatModel("1 min", '1 min ago', "MARB 130", REFRESH_CONVO),
+  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL", BASIC_CONVO),
+  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB", BASIC_CONVO),
+  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace", BASIC_CONVO),
+  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park", BASIC_CONVO),
+  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB", BASIC_CONVO),
 ];
 
 List<StatelessWidget> REFRESH_CONVO = const [
