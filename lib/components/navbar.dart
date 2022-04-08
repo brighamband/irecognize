@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:irecognize/components/app_logo.dart';
 import 'package:irecognize/components/sub_navbar.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/my_friends_page.dart';
@@ -32,6 +33,8 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget getSearchIcon(BuildContext context) {
+    String? currentPage = ModalRoute.of(context)?.settings.name;
+
     return IconButton(
       icon: Icon(
         Icons.search,
@@ -61,7 +64,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         foregroundColor: colorScheme.primary,
         systemOverlayStyle:
             SystemUiOverlayStyle(statusBarColor: colorScheme.surface),
-        title: const Text('SEARCHBAR'),
+        title: const AppLogo(),
         actions: currPage != MY_FRIENDS_PAGE
             ? [getSearchIcon(context), getMyFriendsIcon(context)]
             : [getSearchIcon(context)],
