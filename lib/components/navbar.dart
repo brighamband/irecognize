@@ -58,8 +58,12 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         backgroundColor: colorScheme.surface,
         foregroundColor: colorScheme.primary,
-        systemOverlayStyle:
-            SystemUiOverlayStyle(statusBarColor: colorScheme.surface),
+        systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: colorScheme.surface,
+            statusBarIconBrightness:
+                Brightness.dark, // For Android (dark icons)
+            statusBarBrightness: Brightness.light // For iOS (dark icons)
+            ),
         title: const AppLogo(),
         actions: currPage != MY_FRIENDS_PAGE
             ? [getSearchIcon(context), getMyFriendsIcon(context)]
