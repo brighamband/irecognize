@@ -50,7 +50,8 @@ class PersonPage extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return LocationCard(
                 location: PLACES_LIST[index].location,
-                url: PLACES_LIST[index].url);
+                url: PLACES_LIST[index].url,
+                date: PLACES_LIST[index].date);
           })
     ]));
   }

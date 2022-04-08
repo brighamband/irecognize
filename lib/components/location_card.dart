@@ -7,10 +7,12 @@ class LocationCard extends StatelessWidget {
     Key? key,
     required this.location,
     required this.url,
+    required this.date,
   }) : super(key: key);
 
   final String location;
   final String url;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class LocationCard extends StatelessWidget {
       child: ListTile(
           leading: Icon(Icons.location_pin, color: colorScheme.tertiary),
           title: Text(location),
+          trailing: Text(date, style: TextStyle(color: colorScheme.primary)),
           onTap: () => _launchURL(url)),
     );
   }

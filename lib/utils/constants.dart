@@ -6,6 +6,9 @@ import 'package:irecognize/models/about_model.dart';
 import 'package:irecognize/models/places_model.dart';
 import 'package:irecognize/models/chat_model.dart';
 
+import 'package:irecognize/components/received_msg_bubble.dart';
+import 'package:irecognize/components/sent_msg_bubble.dart';
+
 const String APP_NAME = 'iRecognize';
 
 const double BIO_BAR_HEIGHT = 1.9 * kToolbarHeight;
@@ -145,28 +148,37 @@ List<PersonModel> ALL_PEOPLE = [
 ];
 
 List<AboutModel> ABOUT_LIST = [
-  AboutModel(0, 'Conversation Reminders',
-      'Ask him how his 340 midterm went today.\nWish him luck for his job interview with Amazon.'),
-  AboutModel(
-      1, 'Events', 'Invited you to his party tomorrow at 7:00pm at his house!'),
-  AboutModel(2, 'How You Met', 'Met in CS 235 2 years ago'),
-  AboutModel(3, 'Birthday', 'July 23'),
-  AboutModel(4, 'DO NOT TALK ABOUT', 'The color green'),
-  AboutModel(5, "Marital Status", "Married"),
-  AboutModel(6, "Social Media", "@instagramHandle\n@twitterHandle")
+  AboutModel('Conversation Reminders',
+      'Ask them how their 312 project presentation went today.\nWish them luck for their job interview at Amazon.'),
+  AboutModel('Events', '340 presentation with them today!!'),
+  AboutModel('How You Met', 'Met in CS 235 2 years ago'),
+  AboutModel('Birthday', 'July 23'),
+  AboutModel('DO NOT TALK ABOUT', 'The color green'),
+  AboutModel("Marital Status", "Married"),
+  AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
 ];
 
 List<PlacesModel> PLACES_LIST = [
-  PlacesModel("Wilk Ballroom",
-      'https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221'),
-  PlacesModel("Talmage Building",
-      'https://www.google.com/maps/place/James+E.+Talmage+Math+Sciences%2FComputer+Bldg,+Provo,+UT+84604/@40.2494007,-111.6530764,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90ba5529a62b:0x12ffaaa86ee53588!8m2!3d40.2494007!4d-111.6508877'),
-  PlacesModel("Penguin Brothers Ice Cream Shop",
-      'https://www.google.com/maps/place/Penguin+Brothers+%7C+Dessert+Catering+and+Ice+Cream+Shop/@40.2510901,-111.658935,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90a37b46802d:0xe81c432303d47eba!8m2!3d40.2510899!4d-111.6567818'),
-  PlacesModel("Kiwanis Park",
-      'https://www.google.com/maps/place/Kiwanis+Park/@40.246933,-111.6419627,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90c853a996c7:0xd0555ec0fe7f4aca!8m2!3d40.246933!4d-111.639774'),
-  PlacesModel("Afuego Fridays",
-      'https://www.google.com/maps/place/Afuego+Fridays/@40.2565867,-111.6738212,17z/data=!3m1!4b1!4m5!3m4!1s0x874d975756dd0785:0x7a126a98d757156c!8m2!3d40.2565867!4d-111.6716325')
+  PlacesModel(
+      "Wilk Ballroom",
+      'https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221',
+      "Today"),
+  PlacesModel(
+      "Talmage Building",
+      'https://www.google.com/maps/place/James+E.+Talmage+Math+Sciences%2FComputer+Bldg,+Provo,+UT+84604/@40.2494007,-111.6530764,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90ba5529a62b:0x12ffaaa86ee53588!8m2!3d40.2494007!4d-111.6508877',
+      "Yesterday"),
+  PlacesModel(
+      "Penguin Brothers Ice Cream Shop",
+      'https://www.google.com/maps/place/Penguin+Brothers+%7C+Dessert+Catering+and+Ice+Cream+Shop/@40.2510901,-111.658935,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90a37b46802d:0xe81c432303d47eba!8m2!3d40.2510899!4d-111.6567818',
+      "Apr 3"),
+  PlacesModel(
+      "Kiwanis Park",
+      'https://www.google.com/maps/place/Kiwanis+Park/@40.246933,-111.6419627,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90c853a996c7:0xd0555ec0fe7f4aca!8m2!3d40.246933!4d-111.639774',
+      "Apr 2"),
+  PlacesModel(
+      "Afuego Fridays",
+      'https://www.google.com/maps/place/Afuego+Fridays/@40.2565867,-111.6738212,17z/data=!3m1!4b1!4m5!3m4!1s0x874d975756dd0785:0x7a126a98d757156c!8m2!3d40.2565867!4d-111.6716325',
+      "Mar 4")
 ];
 
 List<ChatModel> CHATS_LIST = [
@@ -175,4 +187,89 @@ List<ChatModel> CHATS_LIST = [
   ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace"),
   ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park"),
   ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB"),
+];
+
+List<StatelessWidget> BASIC_CONVO = const [
+  SentMsgBubble(message: "Hey! What's up?"),
+  ReceivedMsgBubble(
+      message:
+          "Hey, nothing much, just came to eat my  lunch. Did you finish that 312 assignment yet?"),
+  SentMsgBubble(message: "Not yet... working on it lol"),
+  ReceivedMsgBubble(
+      message: "Yeah that's how it goes. I'm almost done with it."),
+  SentMsgBubble(message: "Oh no way!? Wanna meet tomorrow to work on it?"),
+  ReceivedMsgBubble(
+      message:
+          "Sure! By the way I think I'm gonna go see Multiverse of madness next Friday. Wanna come?"),
+  SentMsgBubble(
+      message: "Yes I've totally been wanting to see that! What time?"),
+  ReceivedMsgBubble(
+      message: "I'm going to the 3:15 showing at the Orem Cinemark."),
+  SentMsgBubble(message: "Sweet yeah I'll see you there"),
+  ReceivedMsgBubble(message: "Ok, see ya!")
+];
+
+// REFRESH DATA
+// Conversation will be like:
+// brigham asks: how 312 project went
+// alexa: husband got into dental school moving to TX in july having a going a away party at my house next friday
+// brigham: good luck on intrview
+List<AboutModel> ALEXA_REFRESH_ABOUT = [
+  AboutModel('Conversation Reminders', 'None'),
+  AboutModel('Events',
+      '356 presentation with them today!!\nInvited you to their going away party Friday, April 22nd at 7:00pm at their house!'),
+  AboutModel('Previous Conversation Highlights',
+      'Husband attending UT Health in San Antonio, TX in July.'),
+  AboutModel('How You Met', 'Met in CS 235 2 years ago'),
+  AboutModel('DO NOT TALK ABOUT', 'The color green'),
+  AboutModel('Birthday', 'July 23'),
+  AboutModel("Marital Status", "Married"),
+  AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
+];
+
+List<PlacesModel> REFRESH_PLACES = [
+  PlacesModel(
+      "MARB 130",
+      "google.com/maps/place/Thomas+L.+Martin+Building,+Campus+Dr,+Provo,+UT+84604/@40.2468374,-111.6513943,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90b0a4e99c2f:0x38103a569ae01515!8m2!3d40.2468374!4d-111.6492056",
+      "Today"),
+  PlacesModel(
+      "Wilk Ballroom",
+      'https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221',
+      "Today"),
+  PlacesModel(
+      "Talmage Building",
+      'https://www.google.com/maps/place/James+E.+Talmage+Math+Sciences%2FComputer+Bldg,+Provo,+UT+84604/@40.2494007,-111.6530764,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90ba5529a62b:0x12ffaaa86ee53588!8m2!3d40.2494007!4d-111.6508877',
+      "Yesterday"),
+  PlacesModel(
+      "Penguin Brothers Ice Cream Shop",
+      'https://www.google.com/maps/place/Penguin+Brothers+%7C+Dessert+Catering+and+Ice+Cream+Shop/@40.2510901,-111.658935,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90a37b46802d:0xe81c432303d47eba!8m2!3d40.2510899!4d-111.6567818',
+      "Apr 3"),
+  PlacesModel(
+      "Kiwanis Park",
+      'https://www.google.com/maps/place/Kiwanis+Park/@40.246933,-111.6419627,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90c853a996c7:0xd0555ec0fe7f4aca!8m2!3d40.246933!4d-111.639774',
+      "Apr 2"),
+  PlacesModel(
+      "Afuego Fridays",
+      'https://www.google.com/maps/place/Afuego+Fridays/@40.2565867,-111.6738212,17z/data=!3m1!4b1!4m5!3m4!1s0x874d975756dd0785:0x7a126a98d757156c!8m2!3d40.2565867!4d-111.6716325',
+      "Mar 4")
+];
+
+List<ChatModel> REFRESH_CHATS = [
+  ChatModel("1 min", '1 min ago', "MARB 130"),
+  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL"),
+  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB"),
+  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace"),
+  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park"),
+  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB"),
+];
+
+List<StatelessWidget> REFRESH_CONVO = const [
+  SentMsgBubble(message: "Hey! What's up? How did your 312 project go?"),
+  ReceivedMsgBubble(
+      message:
+          "It went well. It's done that's all that matters. Hey so, my husband go into UT Health dental school in San Antonio. We not moving until july, but we are having a going away party next Friday at 7:00 at my place if you wanna come!"),
+  SentMsgBubble(message: "Sure thing! I'll be there. See ya then."),
+  ReceivedMsgBubble(message: "Ok, great! See ya then."),
+  SentMsgBubble(message: "Oh, hey, and good luck on your job interview today."),
+  ReceivedMsgBubble(message: "Thanks! See ya!")
 ];

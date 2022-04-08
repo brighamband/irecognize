@@ -22,12 +22,13 @@ class ChatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(person.name),
+        title: Text(time),
         subtitle: Text(duration),
-        trailing: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          Text(time),
-          Text(location, style: const TextStyle(fontSize: 11))
-        ]),
+        trailing: Text(location, style: TextStyle(color: colorScheme.primary)),
+        // Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+        //   Text(time),
+        //   Text(location, style: const TextStyle(fontSize: 11))
+        // ]),
         onTap: () =>
             goToPage(context, ChatPage(onOwnBio: false, person: person)),
       ),
