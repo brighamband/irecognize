@@ -7,8 +7,6 @@ import 'package:irecognize/pages/my_friends_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
-
-import '../pages/home_page.dart';
 import '../pages/person_page.dart';
 
 class Navbar extends StatelessWidget implements PreferredSizeWidget {
@@ -33,8 +31,6 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget getSearchIcon(BuildContext context) {
-    String? currentPage = ModalRoute.of(context)?.settings.name;
-
     return IconButton(
       icon: Icon(
         Icons.search,
@@ -89,26 +85,20 @@ class MySearchDelagte extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
-      IconButton(
-          onPressed: () {
-            query = '';
-          },
-          icon: const Icon(Icons.clear))
+      IconButton(onPressed: () => query = '', icon: const Icon(Icons.clear))
     ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-        onPressed: () {
-          close(context, null);
-        },
+        onPressed: () => close(context, null),
         icon: const Icon(Icons.arrow_back));
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    return const Center();
+    return const Placeholder();
   }
 
   @override
