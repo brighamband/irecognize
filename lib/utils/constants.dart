@@ -115,7 +115,6 @@ List<PersonModel> MY_TALKED_TO_RECENTLY = [
 List<PersonModel> FRIENDS_NETWORK = [
   // Network of friends
   // Use getMyFriends() in helpers to get list from perspective of a certain person
-  CURRENT_USER,
   ALEXA_URREA,
   SAM_BENNION,
   HARRISON_BURGESS,
@@ -126,8 +125,7 @@ List<PersonModel> FRIENDS_NETWORK = [
 ];
 
 List<PersonModel> ALL_PEOPLE = [
-  // List of all people including current user
-  CURRENT_USER,
+  // List of all people
   ALEXA_URREA,
   SAM_BENNION,
   TRACE_HALE,
