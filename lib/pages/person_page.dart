@@ -5,7 +5,7 @@ import 'package:irecognize/components/cards/chat_card.dart';
 import 'package:irecognize/utils/helpers.dart';
 
 import '../components/bars/navbar.dart';
-import '../components/cards/highlights_card.dart';
+import '../components/cards/about_card.dart';
 import '../components/cards/location_card.dart';
 import '../components/containers/person_list.dart';
 
@@ -29,7 +29,7 @@ class PersonPage extends StatelessWidget {
         shrinkWrap: true,
         itemCount: 7,
         itemBuilder: (BuildContext context, int index) {
-          return HighlightsCard(
+          return AboutCard(
               title: ABOUT_LIST[index].title, info: ABOUT_LIST[index].info);
         },
       ),

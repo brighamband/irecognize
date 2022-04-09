@@ -22,6 +22,11 @@ class LocationCard extends StatelessWidget {
           title: Text(location),
           trailing: Text(date, style: TextStyle(color: colorScheme.primary)),
           onTap: () => _launchURL(url)),
+      shape: RoundedRectangleBorder(
+          side: BorderSide(color: colorScheme.outline),
+          borderRadius: BorderRadius.circular(10.0)),
+      elevation: 0,
+      margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
     );
   }
 
