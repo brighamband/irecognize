@@ -180,11 +180,11 @@ List<PlacesModel> PLACES_LIST = [
 ];
 
 List<ChatModel> CHATS_LIST = [
-  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL", BASIC_CONVO),
-  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB", BASIC_CONVO),
-  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace", BASIC_CONVO),
-  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park", BASIC_CONVO),
-  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB", BASIC_CONVO),
+  ChatModel("5 min", 'Today @ 3:45 PM', "WSC BALL", BASIC_CONVO),
+  ChatModel("2 hours", "Yesterday @ 11:03 AM", "TMCB", BASIC_CONVO),
+  ChatModel("32 min", "Apr 6 @ 12:10 PM", "WSC Terrace", BASIC_CONVO),
+  ChatModel("4 hours", "Apr 2 @ 2:33 PM", "Kiwanis Park", BASIC_CONVO),
+  ChatModel("2 hours", "Mar 30 @ 11:01 AM", "TMCB", BASIC_CONVO),
 ];
 
 List<StatelessWidget> BASIC_CONVO = const [
