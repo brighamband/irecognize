@@ -39,7 +39,7 @@ PersonModel CURRENT_USER = PersonModel(
 PersonModel ALEXA_URREA = PersonModel('Alexa Urrea', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SJFP5TFD-800745531fd0-512');
 PersonModel SAM_BENNION = PersonModel('Sam Bennion', BYU_CS_STUDENT_TAGLINE,
-    'https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/85213555_1127885937542537_3247095546082492416_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=174925&_nc_ohc=E9Fb031rpUUAX-UbMVs&tn=RteFkLhyY_dF-ZAW&_nc_ht=scontent-lax3-2.xx&oh=00_AT8A5Gi9lQbeXBG9tH-H15WRoAiTIcuS2eddGe-RJdQIJQ&oe=6275645D');
+    'https://avatars.githubusercontent.com/u/13336157?v=4');
 PersonModel TRACE_HALE = PersonModel(
     'Trace Hale', BYU_CS_STUDENT_TAGLINE, S3_BASE_URL + 'TRACE_HALE.jpg');
 PersonModel ADAM_LENNING = PersonModel(
