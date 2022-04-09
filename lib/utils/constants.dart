@@ -45,7 +45,7 @@ PersonModel TRACE_HALE = PersonModel(
 PersonModel ADAM_LENNING = PersonModel(
     'Adam Lenning',
     "TA for CS 356.  I'm a huge fan of UI/UX and Stats!",
-    'https://ca.slack-edge.com/T02S59PFSPM-U02T7VANHPS-d0ea373a42f9-512');
+    S3_BASE_URL + 'ADAM_LENNING.jpg');
 PersonModel MIKE_JONES = PersonModel(
     'Mike Jones',
     'Biggest advocate of HCI in the outdoors!  Skiing is life.',
