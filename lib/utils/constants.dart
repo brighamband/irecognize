@@ -60,12 +60,12 @@ PersonModel HARRISON_BURGESS = PersonModel(
     'Harrison Burgess',
     BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SJD2Q7EE-82cf643a6be1-512');
-PersonModel CARTER_MADSEN = PersonModel('Carter Madsen', BYU_CS_STUDENT_TAGLINE,
-    'https://ca.slack-edge.com/T02S59PFSPM-U02SLGBMSQ4-aa49c5405700-512');
 PersonModel TUSTIN_NEILSON = PersonModel(
     'Tustin Neilson',
     BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SFH46QLD-583f467533cd-512');
+PersonModel CARTER_MADSEN = PersonModel('Carter Madsen', BYU_CS_STUDENT_TAGLINE,
+    'https://ca.slack-edge.com/T02S59PFSPM-U02SLGBMSQ4-aa49c5405700-512');
 PersonModel RAND_ALRABADI = PersonModel('Rand Alrabadi', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SF9N5X8D-fcf82c2118a3-512');
 PersonModel JACOB_SEARLE = PersonModel('Jake Searle', BYU_CS_STUDENT_TAGLINE,
@@ -93,8 +93,8 @@ List<PersonModel> PEOPLE_NEAR_ME = [
   ELIJAH_QUARTEY,
   MADDIE_PETTY,
   HARRISON_BURGESS,
-  CARTER_MADSEN,
   TUSTIN_NEILSON,
+  CARTER_MADSEN,
   RAND_ALRABADI,
   JACOB_SEARLE,
   DANIEL_TAYLOR,
@@ -134,8 +134,8 @@ List<PersonModel> ALL_PEOPLE = [
   ELIJAH_QUARTEY,
   MADDIE_PETTY,
   HARRISON_BURGESS,
-  CARTER_MADSEN,
   TUSTIN_NEILSON,
+  CARTER_MADSEN,
   RAND_ALRABADI,
   JACOB_SEARLE,
   DANIEL_TAYLOR,
