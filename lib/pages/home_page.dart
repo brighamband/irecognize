@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person/person_grid.dart';
-import 'package:irecognize/components/person/person_list.dart';
 import 'package:irecognize/pages/gyro_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
+
+import '../components/bars/navbar.dart';
+import '../components/containers/person_grid.dart';
+import '../components/containers/person_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

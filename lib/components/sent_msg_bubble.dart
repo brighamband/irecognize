@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/custom_shape.dart';
 import 'package:irecognize/utils/theme.dart';
+
+import 'custom_shape.dart';
 
 class SentMsgBubble extends StatelessWidget {
   const SentMsgBubble({

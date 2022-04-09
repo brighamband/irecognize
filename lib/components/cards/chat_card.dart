@@ -33,7 +33,7 @@ class ChatCard extends StatelessWidget {
         // ]),
         onTap: () => goToPage(
             context,
-            ChatPage(
+            ChatsPage(
               onOwnBio: false,
               person: person,
               convo: convo,

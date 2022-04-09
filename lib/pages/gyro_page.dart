@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person/pic_name_card.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/person_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
+
+import '../components/bars/navbar.dart';
+import '../components/cards/pic_name_card.dart';
 
 class GyroPage extends StatelessWidget {
   GyroPage({Key? key}) : super(key: key);

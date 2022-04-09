@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:irecognize/components/empty_state_text.dart';
-import 'package:irecognize/components/person/pic_name_card.dart';
 import 'package:irecognize/models/person_model.dart';
+
+import '../cards/pic_name_card.dart';
 
 class PersonList extends StatelessWidget {
   const PersonList({Key? key, required this.people, required this.emptyMsg})

@@ -6,8 +6,8 @@ import 'package:irecognize/models/about_model.dart';
 import 'package:irecognize/models/places_model.dart';
 import 'package:irecognize/models/chat_model.dart';
 
-import 'package:irecognize/components/received_msg_bubble.dart';
-import 'package:irecognize/components/sent_msg_bubble.dart';
+import '../components/received_msg_bubble.dart';
+import '../components/sent_msg_bubble.dart';
 
 const String APP_NAME = 'iRecognize';
 

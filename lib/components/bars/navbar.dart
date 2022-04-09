@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:irecognize/components/app_logo.dart';
-import 'package:irecognize/components/sub_navbar.dart';
+import 'package:irecognize/components/bars/sub_navbar.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/my_friends_page.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
-import '../pages/person_page.dart';
+
+import '../../pages/person_page.dart';
 
 class Navbar extends StatelessWidget implements PreferredSizeWidget {
   const Navbar({

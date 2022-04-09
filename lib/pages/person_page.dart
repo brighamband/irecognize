@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person/person_list.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
-import 'package:irecognize/components/highlights_card.dart';
-import 'package:irecognize/components/location_card.dart';
-import 'package:irecognize/components/chat_card.dart';
-import 'package:irecognize/components/person/pic_name_card.dart';
+import 'package:irecognize/components/cards/chat_card.dart';
 import 'package:irecognize/utils/helpers.dart';
+
+import '../components/bars/navbar.dart';
+import '../components/cards/highlights_card.dart';
+import '../components/cards/location_card.dart';
+import '../components/containers/person_list.dart';
 
 class PersonPage extends StatelessWidget {
   const PersonPage({
