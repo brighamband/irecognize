@@ -28,6 +28,8 @@ const String S3_BASE_URL =
 const String DEFAULT_IMG_URL = S3_BASE_URL + 'DEFAULT_IMG_URL.jpg';
 const String BYU_CS_STUDENT_TAGLINE =
     "I'm a BYU student taking CS 356.  I love that CS 356 is my only class!";
+const String SOJO_BRO_TAGLINE =
+    "I'm from South Jordan and I love to ball up with the buddies!";
 
 // Start of hard-coded people
 
@@ -81,6 +83,21 @@ PersonModel DYLAN_PACKHAM = PersonModel('Dylan Packham', BYU_CS_STUDENT_TAGLINE,
 PersonModel JAX_MATTHEWS = PersonModel('Jax Matthews', BYU_CS_STUDENT_TAGLINE,
     'https://ca.slack-edge.com/T02S59PFSPM-U02SBH3RXAA-c754706d9c9b-512');
 
+PersonModel CODY_KNECHT = PersonModel(
+    'Cody Knecht',
+    "I'm a party animal always looking for a good time!",
+    'https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/74163393_105469217541030_6680815542959341568_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=Ffno8TKMl9UAX8sZLMf&_nc_ht=scontent-lax3-2.xx&oh=00_AT-7-ZEn40O1likX3iQrnCQL3dfjx0FIB6DrD8SQRwBOeg&oe=6275BF1F');
+PersonModel ISAAC_PETTIT = PersonModel('Isaac Pettit', SOJO_BRO_TAGLINE,
+    'https://scontent-lax3-1.xx.fbcdn.net/v/t1.6435-9/119837228_611934999471646_2931247024621831643_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=FbSRnE4ohNoAX8G6lQn&_nc_ht=scontent-lax3-1.xx&oh=00_AT_r99Ra3k9l-7WAYN5-CfHX0enW5xtrXh6Hj5WT_CTswg&oe=62764994');
+PersonModel CADEN_KIRBY = PersonModel('Caden Kirby', SOJO_BRO_TAGLINE,
+    'https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/127759301_2853316474941664_706178127536423216_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=530iTwDFsKIAX858e05&_nc_ht=scontent-lax3-2.xx&oh=00_AT-HPnlr56IuEy2kH6km8FgKO1Jn-Mt2nJgQ7eWRKvPAYA&oe=62786AB0');
+PersonModel JEFFERSON_HARBAUGH = PersonModel(
+    'Jefferson Harbaugh',
+    SOJO_BRO_TAGLINE,
+    'https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/235749020_581089276597136_3792108346606392814_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=3IW7XgEpsg8AX8wKU7J&_nc_ht=scontent-lax3-1.xx&oh=00_AT9p97Howy9bTSHzD-rahiks2mUzPjW7ZDQGcwM75uwIWQ&oe=62568574');
+PersonModel MARCUS_YOUNG = PersonModel('Marcus Young', SOJO_BRO_TAGLINE,
+    'https://scontent-lax3-2.xx.fbcdn.net/v/t1.6435-9/123586938_10207457148862615_3895091083065767711_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=174925&_nc_ohc=rUV3SIJ9JE4AX9ryLuE&_nc_ht=scontent-lax3-2.xx&oh=00_AT9X1uPsG_iYjMJRITWNQa0G0em_l-eghtyMAc0g2sLOag&oe=627647A9');
+
 // Start of lists of hard-coded people
 
 List<PersonModel> PEOPLE_NEAR_ME = [
@@ -109,10 +126,11 @@ List<PersonModel> MY_TALKED_TO_RECENTLY = [
   ALEXA_URREA,
   SAM_BENNION,
   MIKE_JONES,
-  TRACE_HALE
+  TRACE_HALE,
+  CODY_KNECHT
 ];
 
-List<PersonModel> FRIENDS_NETWORK = [
+List<PersonModel> BYU_FRIENDS_NETWORK = [
   // Network of friends
   // Use getMyFriends() in helpers to get list from perspective of a certain person
   ALEXA_URREA,
@@ -122,6 +140,14 @@ List<PersonModel> FRIENDS_NETWORK = [
   ETHAN_WALCH,
   DYLAN_PACKHAM,
   TRACE_HALE
+];
+
+List<PersonModel> FRIENDS_FROM_HOME_NETWORK = [
+  CODY_KNECHT,
+  ISAAC_PETTIT,
+  CADEN_KIRBY,
+  JEFFERSON_HARBAUGH,
+  MARCUS_YOUNG
 ];
 
 List<PersonModel> ALL_PEOPLE = [
@@ -142,7 +168,12 @@ List<PersonModel> ALL_PEOPLE = [
   ETHAN_WALCH,
   NOOR_ASSI,
   DYLAN_PACKHAM,
-  JAX_MATTHEWS
+  JAX_MATTHEWS,
+  CODY_KNECHT,
+  ISAAC_PETTIT,
+  CADEN_KIRBY,
+  JEFFERSON_HARBAUGH,
+  MARCUS_YOUNG
 ];
 
 List<AboutModel> ABOUT_LIST = [
