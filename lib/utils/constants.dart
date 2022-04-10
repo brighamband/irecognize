@@ -180,8 +180,8 @@ List<AboutModel> ABOUT_LIST = [
   AboutModel(
       'Conversation Reminders', 'Ask how 312 project presentation went today'),
   AboutModel('Events', '340 presentation with them today!!'),
-  AboutModel('How You Met', 'Met in CS 235 2 years ago'),
-  AboutModel('Birthday', 'July 23'),
+  AboutModel('How You Met', 'Met in CS 235 2 months ago'),
+  AboutModel('Birthday', 'November 7'),
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
   AboutModel("Relationship Status", "Married"),
   AboutModel("Social Media", "@sambennion"),
@@ -221,14 +221,23 @@ List<PlacesModel> REFRESH_PLACES_LIST = [
 ];
 
 List<ChatModel> CHATS_LIST = [
-  ChatModel("5 min", 'Today @ 3:45 PM', "WSC BALL", BASIC_CONVO),
-  ChatModel("2 hours", "Yesterday @ 11:03 AM", "TMCB", BASIC_CONVO),
-  ChatModel("32 min", "Apr 6 @ 12:10 PM", "WSC Terrace", BASIC_CONVO),
-  ChatModel("4 hours", "Apr 2 @ 2:33 PM", "Kiwanis Park", BASIC_CONVO),
-  ChatModel("2 hours", "Mar 30 @ 11:01 AM", "TMCB", BASIC_CONVO),
+  ChatModel("5 min", 'Today @ 3:45 PM', "WSC BALL", ORIG_CONVO),
+  ChatModel("2 hours", "Yesterday @ 11:03 AM", "TMCB", ORIG_CONVO),
+  ChatModel("32 min", "Apr 6 @ 12:10 PM", "WSC Terrace", ORIG_CONVO),
+  ChatModel("4 hours", "Apr 2 @ 2:33 PM", "Kiwanis Park", ORIG_CONVO),
+  ChatModel("2 hours", "Mar 30 @ 11:01 AM", "TMCB", ORIG_CONVO),
 ];
 
-List<StatelessWidget> BASIC_CONVO = const [
+List<ChatModel> REFRESH_CHATS_LIST = [
+  ChatModel("1 min", '1 min ago', "MARB 130", REFRESH_CONVO),
+  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL", ORIG_CONVO),
+  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB", ORIG_CONVO),
+  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace", ORIG_CONVO),
+  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park", ORIG_CONVO),
+  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB", ORIG_CONVO),
+];
+
+List<StatelessWidget> ORIG_CONVO = const [
   SentMsgBubble(message: "Hey! What's up?"),
   ReceivedMsgBubble(
       message:
@@ -242,15 +251,6 @@ List<StatelessWidget> BASIC_CONVO = const [
   SentMsgBubble(message: "Oh that's sweet! Well good luck on that."),
   ReceivedMsgBubble(message: "Thanks man. See ya."),
   SentMsgBubble(message: "See ya!"),
-];
-
-List<ChatModel> REFRESH_CHATS = [
-  ChatModel("1 min", '1 min ago', "MARB 130", REFRESH_CONVO),
-  ChatModel("5 min", 'Today 3:45 PM', "WSC BALL", BASIC_CONVO),
-  ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB", BASIC_CONVO),
-  ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace", BASIC_CONVO),
-  ChatModel("4 hours", "Apr 2 2:33 PM", "Kiwanis Park", BASIC_CONVO),
-  ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB", BASIC_CONVO),
 ];
 
 // B: “Hey Sam!”
