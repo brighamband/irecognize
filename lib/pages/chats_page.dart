@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/received_msg_bubble.dart';
-import 'package:irecognize/components/sent_msg_bubble.dart';
 import 'package:irecognize/models/person_model.dart';
-import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/theme.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({
+import '../components/bars/navbar.dart';
+
+class ChatsPage extends StatelessWidget {
+  const ChatsPage({
     Key? key,
     required this.onOwnBio,
     required this.person,
@@ -29,7 +27,6 @@ class ChatPage extends StatelessWidget {
         onPressed: () {},
         tooltip: 'Play back conversation',
         child: const Icon(Icons.play_arrow),
-        // Icon(Icons.explore)
         backgroundColor: colorScheme.tertiary,
       ),
     );

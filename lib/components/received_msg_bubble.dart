@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/custom_shape.dart';
 import 'dart:math' as math;
+
+import 'custom_shape.dart';
 
 class ReceivedMsgBubble extends StatelessWidget {
   const ReceivedMsgBubble({

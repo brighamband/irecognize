@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person/person_list.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
-import 'package:irecognize/components/highlights_card.dart';
-import 'package:irecognize/components/location_card.dart';
-import 'package:irecognize/components/chat_card.dart';
-import 'package:irecognize/components/person/pic_name_card.dart';
+import 'package:irecognize/components/cards/chat_card.dart';
 import 'package:irecognize/utils/helpers.dart';
+import 'package:irecognize/utils/theme.dart';
+
+import '../components/bars/navbar.dart';
+import '../components/cards/about_card.dart';
+import '../components/cards/location_card.dart';
+import '../components/containers/person_list.dart';
 
 class PersonPage extends StatelessWidget {
   const PersonPage({
@@ -20,16 +21,20 @@ class PersonPage extends StatelessWidget {
   Widget renderAboutSection(BuildContext context) {
     return SingleChildScrollView(
         child: Column(children: [
-      const Padding(
-        padding: EdgeInsets.all(15),
-      ),
+      Padding(
+          padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
+          child: Text("More about ${person.name}",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: colorScheme.onBackground))),
       ListView.builder(
         scrollDirection: Axis.vertical,
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 7,
         itemBuilder: (BuildContext context, int index) {
-          return HighlightsCard(
+          return AboutCard(
               title: ABOUT_LIST[index].title, info: ABOUT_LIST[index].info);
         },
       ),
@@ -39,9 +44,13 @@ class PersonPage extends StatelessWidget {
   Widget renderPlacesSection(BuildContext context) {
     return SingleChildScrollView(
         child: Column(children: [
-      const Padding(
-        padding: EdgeInsets.all(15),
-      ),
+      Padding(
+          padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
+          child: Text("Where Our Paths Have Crossed",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: colorScheme.onBackground))),
       ListView.builder(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
@@ -59,9 +68,13 @@ class PersonPage extends StatelessWidget {
   Widget renderFriendsSection(BuildContext context) {
     return SingleChildScrollView(
         child: Column(children: [
-      const Padding(
-        padding: EdgeInsets.symmetric(vertical: 15.0),
-      ),
+      Padding(
+          padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
+          child: Text("Our Mutual Friends",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: colorScheme.onBackground))),
       PersonList(people: getTheirFriends(person), emptyMsg: 'No mutual friends')
     ]));
   }
@@ -69,9 +82,13 @@ class PersonPage extends StatelessWidget {
   Widget renderChatsSection(BuildContext context) {
     return SingleChildScrollView(
         child: Column(children: [
-      const Padding(
-        padding: EdgeInsets.symmetric(vertical: 15.0),
-      ),
+      Padding(
+          padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
+          child: Text("Our In-Person Chats",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: colorScheme.onBackground))),
       ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.vertical,

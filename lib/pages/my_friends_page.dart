@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:irecognize/components/navbar.dart';
-import 'package:irecognize/components/person/person_grid.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
+
+import '../components/bars/navbar.dart';
+import '../components/containers/person_grid.dart';
 
 class MyFriendsPage extends StatelessWidget {
   const MyFriendsPage({
