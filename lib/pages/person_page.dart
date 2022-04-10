@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/components/cards/chat_card.dart';
@@ -24,20 +25,19 @@ class PersonPage extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
           child: Text("More about ${person.name}",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: colorScheme.onBackground))),
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: colorScheme.onBackground,
+                  fontWeight: FontWeight.w300))),
       ListView.builder(
         scrollDirection: Axis.vertical,
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: 7,
+        itemCount: ABOUT_LIST.length,
         itemBuilder: (BuildContext context, int index) {
           return AboutCard(
               title: ABOUT_LIST[index].title, info: ABOUT_LIST[index].info);
         },
-      ),
+      )
     ]));
   }
 
@@ -47,10 +47,9 @@ class PersonPage extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
           child: Text("Where Our Paths Have Crossed",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: colorScheme.onBackground))),
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: colorScheme.onBackground,
+                  fontWeight: FontWeight.w300))),
       ListView.builder(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
@@ -71,10 +70,9 @@ class PersonPage extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
           child: Text("Our Mutual Friends",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: colorScheme.onBackground))),
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: colorScheme.onBackground,
+                  fontWeight: FontWeight.w300))),
       PersonList(people: getTheirFriends(person), emptyMsg: 'No mutual friends')
     ]));
   }
@@ -85,10 +83,9 @@ class PersonPage extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(top: 28.0, bottom: 16.0),
           child: Text("Our In-Person Chats",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: colorScheme.onBackground))),
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: colorScheme.onBackground,
+                  fontWeight: FontWeight.w300))),
       ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.vertical,

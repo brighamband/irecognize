@@ -27,7 +27,7 @@ const String S3_BASE_URL =
     'https://irecognize-profile-pics.s3.us-east-2.amazonaws.com/';
 const String DEFAULT_IMG_URL = S3_BASE_URL + 'DEFAULT_IMG_URL.jpg';
 const String BYU_CS_STUDENT_TAGLINE =
-    "I'm a BYU student taking CS 356.  I love that CS 356 is my only class!";
+    "I'm a BYU student taking CS 356.  Love that CS 356 is my only class!";
 const String SOJO_BRO_TAGLINE =
     "I'm from South Jordan and I love to ball up with the buddies!";
 
@@ -177,14 +177,24 @@ List<PersonModel> ALL_PEOPLE = [
 ];
 
 List<AboutModel> ABOUT_LIST = [
+  AboutModel(
+      'Conversation Reminders', 'Ask how 312 project presentation went today'),
+  AboutModel('Events', '340 presentation with them today!!'),
+  AboutModel('How You Met', 'Met in CS 235 2 years ago'),
+  AboutModel('Birthday', 'July 23'),
+  AboutModel('DO NOT TALK ABOUT', 'The color green'),
+  AboutModel("Relationship Status", "Married"),
+  AboutModel("Social Media", "@sambennion"),
+];
+
+List<AboutModel> REFRESH_ABOUT_LIST = [
   AboutModel('Conversation Reminders',
-      'Ask them how their 312 project presentation went today.\nWish them luck for their job interview at Amazon.'),
+      'Wish them luck for their job interview at Amazon'),
   AboutModel('Events', '340 presentation with them today!!'),
   AboutModel('How You Met', 'Met in CS 235 2 years ago'),
   AboutModel('Birthday', 'July 23'),
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
   AboutModel("Marital Status", "Married"),
-  AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
 ];
 
 List<PlacesModel> PLACES_LIST = [
@@ -252,7 +262,7 @@ List<AboutModel> ALEXA_REFRESH_ABOUT = [
   AboutModel('How You Met', 'Met in CS 235 2 years ago'),
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
   AboutModel('Birthday', 'July 23'),
-  AboutModel("Marital Status", "Married"),
+  AboutModel("Relationship Status", "Married"),
   AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
 ];
 
