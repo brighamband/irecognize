@@ -192,7 +192,7 @@ List<AboutModel> REFRESH_ABOUT_LIST = [
       'Wish them luck for their job interview at Amazon'),
   AboutModel('Events', '340 presentation with them today!!'),
   AboutModel('How You Met', 'Met in CS 235 2 years ago'),
-  AboutModel('Birthday', 'July 23'),
+  AboutModel('Birthday', 'November 7'),
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
   AboutModel("Marital Status", "Married"),
 ];
@@ -235,26 +235,18 @@ List<StatelessWidget> BASIC_CONVO = const [
           "Hey, nothing much, just came to eat my  lunch. Did you finish that 340 assignment yet?"),
   SentMsgBubble(message: "Not yet... working on it lol"),
   ReceivedMsgBubble(
-      message: "Yeah that's how it goes. I'm almost done with it."),
-  SentMsgBubble(message: "Oh no way!? Wanna meet tomorrow to work on it?"),
-  ReceivedMsgBubble(
       message:
-          "Sure! By the way I think I'm gonna go see Multiverse of madness next Friday. Wanna come?"),
-  SentMsgBubble(
-      message: "Yes I've totally been wanting to see that! What time?"),
-  ReceivedMsgBubble(
-      message: "I'm going to the 3:15 showing at the Orem Cinemark."),
-  SentMsgBubble(message: "Sweet yeah I'll see you there"),
-  ReceivedMsgBubble(message: "Ok, see ya!")
+          "Yeah that's how it goes. I'm working on a 312 project right now. My presentation is coming up."),
+  SentMsgBubble(message: "Oh no way!? What algorithm is your group doing?"),
+  ReceivedMsgBubble(message: "We're doing simulated annealing."),
+  SentMsgBubble(message: "Oh that's sweet! Well good luck on that."),
+  ReceivedMsgBubble(message: "Thanks man. See ya."),
+  SentMsgBubble(message: "See ya!"),
 ];
 
-// REFRESH DATA
-// Conversation will be like:
-// brigham asks: how 312 project went
-// alexa: husband got into dental school moving to TX in july having a going a away party at my house next friday
-// brigham: good luck on intrview
-List<AboutModel> ALEXA_REFRESH_ABOUT = [
-  AboutModel('Conversation Reminders', 'None'),
+List<AboutModel> SAM_REFRESH_ABOUT = [
+  AboutModel(
+      'Conversation Reminders', 'Check how his second Amazon interview went!'),
   AboutModel('Events',
       '356 presentation with them today!!\nInvited you to their going away party Friday, April 22nd at 7:00pm at their house!'),
   AboutModel('Previous Conversation Highlights',
@@ -263,7 +255,7 @@ List<AboutModel> ALEXA_REFRESH_ABOUT = [
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
   AboutModel('Birthday', 'July 23'),
   AboutModel("Relationship Status", "Married"),
-  AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
+  AboutModel("Social Media", "@sambennion")
 ];
 
 List<PlacesModel> REFRESH_PLACES = [
@@ -302,13 +294,26 @@ List<ChatModel> REFRESH_CHATS = [
   ChatModel("2 hours", "Mar 30 11:01 AM", "TMCB", BASIC_CONVO),
 ];
 
+// B: “Hey Sam!”
+// S: “Hey Brigham!  It was fun running into you this weekend!”
+// B: “Yeah skating was really fun!  Also we talked about your 312 group project – how’d that presentation go the other day?”
+// S: “Oh you remember that?  Super good man, thanks for asking!”
+// B: “What was your project algorithm again?  Simulated annealing, right?”
+// S: “Okay your memory is insane!  Yes!  Funny you bring that up, I talked about simulated annealing at my interview with Amazon and they’ve called me back for another!”
+// B: “Sweet!  I’m excited to hear how that goes!”
+
 List<StatelessWidget> REFRESH_CONVO = const [
-  SentMsgBubble(message: "Hey! What's up? How did your 312 project go?"),
+  SentMsgBubble(message: "“Hey Sam!”"),
+  ReceivedMsgBubble(
+      message: "Hey Brigham!  It was fun running into you this weekend!"),
+  SentMsgBubble(
+      message:
+          "Yeah skating was really fun!  Also we talked about your 312 group project how did that presentation go the other day?"),
   ReceivedMsgBubble(
       message:
-          "It went well. It's done that's all that matters. Hey so, my husband go into UT Health dental school in San Antonio. We not moving until july, but we are having a going away party next Friday at 7:00 at my place if you wanna come!"),
-  SentMsgBubble(message: "Sure thing! I'll be there. See ya then."),
-  ReceivedMsgBubble(message: "Ok, great! See ya then."),
-  SentMsgBubble(message: "Oh, hey, and good luck on your job interview today."),
-  ReceivedMsgBubble(message: "Thanks! See ya!")
+          "What was your project algorithm again? Simulated annealing, right?"),
+  SentMsgBubble(
+      message:
+          "Okay your memory is insane!  Yes!  Funny you bring that up, I talked about simulated annealing at my interview with Amazon and they called me back for another!"),
+  ReceivedMsgBubble(message: "Sweet! Im excited to hear how that goes!")
 ];

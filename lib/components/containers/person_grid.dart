@@ -3,6 +3,7 @@ import 'package:irecognize/components/empty_state_text.dart';
 import 'package:irecognize/components/profile_pic.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/person_page.dart';
+import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
@@ -27,7 +28,13 @@ class PersonGrid extends StatelessWidget {
           elevation: 0,
         )),
         onTap: () {
-          goToPage(context, PersonPage(person: person));
+          goToPage(
+              context,
+              PersonPage(
+                  person: person,
+                  about_list: ABOUT_LIST,
+                  places_list: PLACES_LIST,
+                  chats_list: CHATS_LIST));
         });
   }
 
