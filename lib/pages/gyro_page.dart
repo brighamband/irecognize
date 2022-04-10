@@ -51,13 +51,7 @@ class GyroPage extends StatelessWidget {
           const Padding(padding: EdgeInsets.all(30)),
           ElevatedButton(
               onPressed: () {
-                goToPage(
-                    context,
-                    PersonPage(
-                        person: testPersonFound,
-                        about_list: ABOUT_LIST,
-                        places_list: PLACES_LIST,
-                        chats_list: CHATS_LIST));
+                goToPage(context, PersonPage(person: testPersonFound));
               },
               child: const Text("View Bio"),
               style: ElevatedButton.styleFrom(primary: colorScheme.tertiary))

@@ -188,7 +188,7 @@ List<AboutModel> ABOUT_LIST = [
 ];
 
 List<AboutModel> REFRESH_ABOUT_LIST = [
-  AboutModel('Conversation Reminders',
+  AboutModel.newInfo('Conversation Reminders',
       'Wish them luck for their job interview at Amazon'),
   AboutModel('Events', '340 presentation with them today!!'),
   AboutModel('How You Met', 'Met in CS 235 2 years ago'),
@@ -229,7 +229,7 @@ List<ChatModel> CHATS_LIST = [
 ];
 
 List<ChatModel> REFRESH_CHATS_LIST = [
-  ChatModel("1 min", '1 min ago', "MARB 130", REFRESH_CONVO),
+  ChatModel.isNewChat("1 min", '1 min ago', "MARB 130", REFRESH_CONVO),
   ChatModel("5 min", 'Today 3:45 PM', "WSC BALL", ORIG_CONVO),
   ChatModel("2 hours", "Yesterday 11:03 AM", "TMCB", ORIG_CONVO),
   ChatModel("32 min", "Apr 6 12:10 PM", "WSC Terrace", ORIG_CONVO),
@@ -262,7 +262,7 @@ List<StatelessWidget> ORIG_CONVO = const [
 // B: “Sweet!  I’m excited to hear how that goes!”
 
 List<StatelessWidget> REFRESH_CONVO = const [
-  SentMsgBubble(message: "“Hey Sam!”"),
+  SentMsgBubble(message: "Hey Sam!"),
   ReceivedMsgBubble(
       message: "Hey Brigham!  It was fun running into you this weekend!"),
   SentMsgBubble(

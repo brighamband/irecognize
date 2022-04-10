@@ -1,42 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/models/chat_model.dart';
 import 'package:irecognize/models/person_model.dart';
 import 'package:irecognize/pages/chats_page.dart';
 import 'package:irecognize/utils/helpers.dart';
 import 'package:irecognize/utils/theme.dart';
 
 class ChatCard extends StatelessWidget {
-  const ChatCard({
-    Key? key,
-    required this.person,
-    required this.duration,
-    required this.time,
-    required this.location,
-    required this.convo,
-  }) : super(key: key);
+  const ChatCard({Key? key, required this.person, required this.chat})
+      : super(key: key);
 
   final PersonModel person;
-  final String duration;
-  final String time;
-  final String location;
-  final List<StatelessWidget> convo;
+  final ChatModel chat;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(time),
-        subtitle: Text(duration),
-        trailing: Text(location, style: TextStyle(color: colorScheme.primary)),
-        // Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-        //   Text(time),
-        //   Text(location, style: const TextStyle(fontSize: 11))
-        // ]),
+        title: Text(chat.time),
+        subtitle: Text(chat.duration),
+        trailing: chat.isNew
+            ? Icon(Icons.new_releases, color: colorScheme.tertiary)
+            : Text(chat.location, style: TextStyle(color: colorScheme.primary)),
         onTap: () => goToPage(
             context,
             ChatsPage(
               onOwnBio: false,
               person: person,
-              convo: convo,
+              convo: chat.convo,
             )),
       ),
       shape: RoundedRectangleBorder(
