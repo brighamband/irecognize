@@ -181,7 +181,7 @@ List<AboutModel> ABOUT_LIST = [
       'Ask them how their 312 project presentation went today.\nWish them luck for their job interview at Amazon.'),
   AboutModel('Events', '340 presentation with them today!!'),
   AboutModel('How You Met', 'Met in CS 235 2 years ago'),
-  AboutModel('Birthday', 'July 23'),
+  AboutModel('Birthday', 'November 7'),
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
   AboutModel("Marital Status", "Married"),
   AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
@@ -243,7 +243,7 @@ List<AboutModel> SAM_REFRESH_ABOUT = [
       'Husband attending UT Health in San Antonio, TX in July.'),
   AboutModel('How You Met', 'Met in CS 235 2 years ago'),
   AboutModel('DO NOT TALK ABOUT', 'The color green'),
-  AboutModel('Birthday', 'July 23'),
+  AboutModel('Birthday', 'November 7'),
   AboutModel("Marital Status", "Married"),
   AboutModel("Social Media", "@instagramHandle\n@twitterHandle")
 ];
