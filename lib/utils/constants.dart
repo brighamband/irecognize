@@ -199,25 +199,25 @@ List<AboutModel> REFRESH_ABOUT_LIST = [
 
 List<PlacesModel> PLACES_LIST = [
   PlacesModel(
-      "Wilk Ballroom",
-      'https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221',
-      "Today"),
+      "Wilk Ballroom", 'https://goo.gl/maps/9T68wjY1qxSZwaYa9', "Saturday"),
   PlacesModel(
-      "Talmage Building",
-      'https://www.google.com/maps/place/James+E.+Talmage+Math+Sciences%2FComputer+Bldg,+Provo,+UT+84604/@40.2494007,-111.6530764,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90ba5529a62b:0x12ffaaa86ee53588!8m2!3d40.2494007!4d-111.6508877',
-      "Yesterday"),
+      "Talmage Building", 'https://goo.gl/maps/4eBE29i1LKQJFSiK8', "Apr 5"),
+  PlacesModel("Penguin Brothers Ice Cream Shop",
+      'https://goo.gl/maps/az11Xp382t1VKFU4A', "Apr 3"),
+  PlacesModel("Kiwanis Park", 'https://goo.gl/maps/LZw4fQqcP8AUaQdU7', "Apr 2"),
+  PlacesModel("Afuego Fridays", 'https://g.page/afuegofridays?share', "Mar 4")
+];
+
+List<PlacesModel> REFRESH_PLACES_LIST = [
+  PlacesModel("MARB 130", 'https://goo.gl/maps/Ab3WN5gBrqCsaQyGA', "5 Min Ago"),
   PlacesModel(
-      "Penguin Brothers Ice Cream Shop",
-      'https://www.google.com/maps/place/Penguin+Brothers+%7C+Dessert+Catering+and+Ice+Cream+Shop/@40.2510901,-111.658935,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90a37b46802d:0xe81c432303d47eba!8m2!3d40.2510899!4d-111.6567818',
-      "Apr 3"),
+      "Wilk Ballroom", 'https://goo.gl/maps/9T68wjY1qxSZwaYa9', "Saturday"),
   PlacesModel(
-      "Kiwanis Park",
-      'https://www.google.com/maps/place/Kiwanis+Park/@40.246933,-111.6419627,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90c853a996c7:0xd0555ec0fe7f4aca!8m2!3d40.246933!4d-111.639774',
-      "Apr 2"),
-  PlacesModel(
-      "Afuego Fridays",
-      'https://www.google.com/maps/place/Afuego+Fridays/@40.2565867,-111.6738212,17z/data=!3m1!4b1!4m5!3m4!1s0x874d975756dd0785:0x7a126a98d757156c!8m2!3d40.2565867!4d-111.6716325',
-      "Mar 4")
+      "Talmage Building", 'https://goo.gl/maps/4eBE29i1LKQJFSiK8', "Apr 5"),
+  PlacesModel("Penguin Brothers Ice Cream Shop",
+      'https://goo.gl/maps/az11Xp382t1VKFU4A', "Apr 3"),
+  PlacesModel("Kiwanis Park", 'https://goo.gl/maps/LZw4fQqcP8AUaQdU7', "Apr 2"),
+  PlacesModel("Afuego Fridays", 'https://g.page/afuegofridays?share', "Mar 4")
 ];
 
 List<ChatModel> CHATS_LIST = [
@@ -242,47 +242,6 @@ List<StatelessWidget> BASIC_CONVO = const [
   SentMsgBubble(message: "Oh that's sweet! Well good luck on that."),
   ReceivedMsgBubble(message: "Thanks man. See ya."),
   SentMsgBubble(message: "See ya!"),
-];
-
-List<AboutModel> SAM_REFRESH_ABOUT = [
-  AboutModel(
-      'Conversation Reminders', 'Check how his second Amazon interview went!'),
-  AboutModel('Events',
-      '356 presentation with them today!!\nInvited you to their going away party Friday, April 22nd at 7:00pm at their house!'),
-  AboutModel('Previous Conversation Highlights',
-      'Husband attending UT Health in San Antonio, TX in July.'),
-  AboutModel('How You Met', 'Met in CS 235 2 years ago'),
-  AboutModel('DO NOT TALK ABOUT', 'The color green'),
-  AboutModel('Birthday', 'July 23'),
-  AboutModel("Relationship Status", "Married"),
-  AboutModel("Social Media", "@sambennion")
-];
-
-List<PlacesModel> REFRESH_PLACES = [
-  PlacesModel(
-      "MARB 130",
-      "google.com/maps/place/Thomas+L.+Martin+Building,+Campus+Dr,+Provo,+UT+84604/@40.2468374,-111.6513943,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90b0a4e99c2f:0x38103a569ae01515!8m2!3d40.2468374!4d-111.6492056",
-      "Today"),
-  PlacesModel(
-      "Wilk Ballroom",
-      'https://www.google.com/maps/place/Ernest+L.+Wilkinson+Student+Center,+1+Campus+Dr,+Provo,+UT+84604/@40.2485515,-111.6494108,17z/data=!4m5!3m4!1s0x874d90b9ee679dc3:0x1937fe0d8a468f80!8m2!3d40.2485515!4d-111.6472221',
-      "Today"),
-  PlacesModel(
-      "Talmage Building",
-      'https://www.google.com/maps/place/James+E.+Talmage+Math+Sciences%2FComputer+Bldg,+Provo,+UT+84604/@40.2494007,-111.6530764,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90ba5529a62b:0x12ffaaa86ee53588!8m2!3d40.2494007!4d-111.6508877',
-      "Yesterday"),
-  PlacesModel(
-      "Penguin Brothers Ice Cream Shop",
-      'https://www.google.com/maps/place/Penguin+Brothers+%7C+Dessert+Catering+and+Ice+Cream+Shop/@40.2510901,-111.658935,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90a37b46802d:0xe81c432303d47eba!8m2!3d40.2510899!4d-111.6567818',
-      "Apr 3"),
-  PlacesModel(
-      "Kiwanis Park",
-      'https://www.google.com/maps/place/Kiwanis+Park/@40.246933,-111.6419627,17z/data=!3m1!4b1!4m5!3m4!1s0x874d90c853a996c7:0xd0555ec0fe7f4aca!8m2!3d40.246933!4d-111.639774',
-      "Apr 2"),
-  PlacesModel(
-      "Afuego Fridays",
-      'https://www.google.com/maps/place/Afuego+Fridays/@40.2565867,-111.6738212,17z/data=!3m1!4b1!4m5!3m4!1s0x874d975756dd0785:0x7a126a98d757156c!8m2!3d40.2565867!4d-111.6716325',
-      "Mar 4")
 ];
 
 List<ChatModel> REFRESH_CHATS = [
