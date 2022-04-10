@@ -269,10 +269,12 @@ List<StatelessWidget> REFRESH_CONVO = const [
       message:
           "Yeah skating was really fun!  Also we talked about your 312 group project how did that presentation go the other day?"),
   ReceivedMsgBubble(
-      message:
-          "What was your project algorithm again? Simulated annealing, right?"),
+      message: '“Oh you remember that?  Super good man, thanks for asking!”'),
   SentMsgBubble(
       message:
+          "What was your project algorithm again? Simulated annealing, right?"),
+  ReceivedMsgBubble(
+      message:
           "Okay your memory is insane!  Yes!  Funny you bring that up, I talked about simulated annealing at my interview with Amazon and they called me back for another!"),
-  ReceivedMsgBubble(message: "Sweet! Im excited to hear how that goes!")
+  SentMsgBubble(message: "Sweet! I'm excited to hear how that goes!")
 ];
