@@ -117,7 +117,13 @@ class MySearchDelagte extends SearchDelegate {
           return ListTile(
             onTap: () {
               query = suggestedPerson.name;
-              goToPage(context, PersonPage(person: suggestedPerson));
+              goToPage(
+                  context,
+                  PersonPage(
+                      person: suggestedPerson,
+                      about_list: ABOUT_LIST,
+                      places_list: PLACES_LIST,
+                      chats_list: CHATS_LIST));
             },
             title: Text(suggestedPerson.name),
           );
