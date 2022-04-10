@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:irecognize/models/about_model.dart';
+import 'package:irecognize/models/chat_model.dart';
 import 'package:irecognize/models/person_model.dart';
+import 'package:irecognize/models/places_model.dart';
 import 'package:irecognize/utils/constants.dart';
 import 'package:irecognize/components/cards/chat_card.dart';
 import 'package:irecognize/utils/helpers.dart';
@@ -14,9 +17,15 @@ class PersonPage extends StatelessWidget {
   const PersonPage({
     Key? key,
     required this.person,
+    required this.about_list,
+    required this.places_list,
+    required this.chats_list,
   }) : super(key: key);
 
   final PersonModel person;
+  final List<AboutModel> about_list;
+  final List<PlacesModel> places_list;
+  final List<ChatModel> chats_list;
 
   Widget renderAboutSection(BuildContext context) {
     return SingleChildScrollView(
@@ -35,7 +44,7 @@ class PersonPage extends StatelessWidget {
         itemCount: 7,
         itemBuilder: (BuildContext context, int index) {
           return AboutCard(
-              title: ABOUT_LIST[index].title, info: ABOUT_LIST[index].info);
+              title: about_list[index].title, info: about_list[index].info);
         },
       ),
     ]));
@@ -58,9 +67,9 @@ class PersonPage extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             return LocationCard(
-                location: PLACES_LIST[index].location,
-                url: PLACES_LIST[index].url,
-                date: PLACES_LIST[index].date);
+                location: places_list[index].location,
+                url: places_list[index].url,
+                date: places_list[index].date);
           })
     ]));
   }
@@ -97,10 +106,10 @@ class PersonPage extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return ChatCard(
               person: person,
-              duration: CHATS_LIST[index].duration,
-              time: CHATS_LIST[index].time,
-              location: CHATS_LIST[index].location,
-              convo: CHATS_LIST[index].convo,
+              duration: chats_list[index].duration,
+              time: chats_list[index].time,
+              location: chats_list[index].location,
+              convo: chats_list[index].convo,
             );
           })
     ]));
