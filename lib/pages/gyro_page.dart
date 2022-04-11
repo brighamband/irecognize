@@ -73,10 +73,6 @@ class GyroPage extends StatefulWidget {
 }
 
 class _MyGyroPageState extends State<GyroPage> {
-  static const int _snakeRows = 20;
-  static const int _snakeColumns = 20;
-  static const double _snakeCellSize = 10.0;
-
   // List<double>? _accelerometerValues;
   // List<double>? _userAccelerometerValues;
   // List<double>? _gyroscopeValues;
@@ -106,30 +102,43 @@ class _MyGyroPageState extends State<GyroPage> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Center(
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.0, color: Colors.black38),
-              ),
-              child: SizedBox(
-                // height: _snakeRows * _snakeCellSize,
-                // width: _snakeColumns * _snakeCellSize,
-                // child: (magnetometer != null && magnetometer[0] < 5 && magnetometer[0] > -5) ? const Text("Hi") : Text("yo"))
-                child: Column(
-                  children: [
-                    if (_magnetometerX != null &&
-                        _magnetometerX! < 5.0 &&
-                        _magnetometerX! > -5.0 &&
-                        _magnetometerY! > 0)
-                      Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: GridTile(
-                              child: ProfilePic(
-                                  imageUrl: testPersonFound.imageUrl)))
-                    else
-                      Text('false $_magnetometerX'),
-                  ],
-                ),
-              ),
+            // child: DecoratedBox(
+            //   decoration: BoxDecoration(
+            //     border: Border.all(width: 1.0, color: Colors.black38),
+            //   ),
+            // height: _snakeRows * _snakeCellSize,
+            // width: _snakeColumns * _snakeCellSize,
+            // child: (magnetometer != null && magnetometer[0] < 5 && magnetometer[0] > -5) ? const Text("Hi") : Text("yo"))
+            child: Column(
+              children: [
+                if (_magnetometerX != null &&
+                    _magnetometerX! < 5.0 &&
+                    _magnetometerX! > -5.0 &&
+                    _magnetometerY! > 0)
+                  Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: GridTile(
+                          child: GestureDetector(
+                              child: (Card(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: GridTile(
+                                      child: ProfilePic(
+                                    imageUrl: testPersonFound.imageUrl,
+                                  )),
+                                ),
+                                shape: CircleBorder(
+                                    side:
+                                        BorderSide(color: colorScheme.outline)),
+                                elevation: 0,
+                              )),
+                              onTap: () {
+                                goToPage(context,
+                                    PersonPage(person: testPersonFound));
+                              })))
+                else
+                  Text('Move phone around to find someone. $_magnetometerX'),
+              ],
             ),
           ),
           // Padding(
@@ -161,9 +170,16 @@ class _MyGyroPageState extends State<GyroPage> {
           // ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
+                ElevatedButton(
+                    onPressed: () {
+                      goToPage(context, PersonPage(person: testPersonFound));
+                    },
+                    child: const Text("View Bio"),
+                    style: ElevatedButton.styleFrom(
+                        primary: colorScheme.tertiary)),
                 Text('Magnetometer: $magnetometer'),
               ],
             ),
