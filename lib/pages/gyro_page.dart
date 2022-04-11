@@ -9,6 +9,7 @@ import 'package:sensors_plus/sensors_plus.dart';
 import 'package:irecognize/components/profile_pic.dart';
 import '../components/bars/navbar.dart';
 import '../components/cards/pic_name_card.dart';
+import 'package:flutter/services.dart';
 
 // class GyroPage extends StatelessWidget {
 //   GyroPage({Key? key}) : super(key: key);
@@ -100,6 +101,9 @@ class _MyGyroPageState extends State<GyroPage> {
         _magnetometerX! < personDirection + 10.0 &&
         _magnetometerX! > personDirection - 10.0 &&
         _magnetometerY! > 0);
+    if (isPointed) {
+      HapticFeedback.mediumImpact();
+    }
     return Scaffold(
       appBar: const Navbar(),
       body: Column(
@@ -123,7 +127,6 @@ class _MyGyroPageState extends State<GyroPage> {
                             .textTheme
                             .headline6
                             ?.copyWith(color: colorScheme.onBackground))),
-
                 if (isPointed)
                   Padding(
                       padding: const EdgeInsets.only(bottom: 250, top: 60),
