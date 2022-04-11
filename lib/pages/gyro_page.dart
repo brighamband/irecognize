@@ -95,11 +95,16 @@ class _MyGyroPageState extends State<GyroPage> {
     //     .toList();
     final magnetometer =
         _magnetometerValues?.map((double v) => v.toStringAsFixed(1)).toList();
-
+    const personDirection = 0.0;
+    bool isPointed = (_magnetometerX != null &&
+        _magnetometerX! < personDirection + 10.0 &&
+        _magnetometerX! > personDirection - 10.0 &&
+        _magnetometerY! > 0);
     return Scaffold(
       appBar: const Navbar(),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Center(
             // child: DecoratedBox(
@@ -111,12 +116,17 @@ class _MyGyroPageState extends State<GyroPage> {
             // child: (magnetometer != null && magnetometer[0] < 5 && magnetometer[0] > -5) ? const Text("Hi") : Text("yo"))
             child: Column(
               children: [
-                if (_magnetometerX != null &&
-                    _magnetometerX! < 5.0 &&
-                    _magnetometerX! > -5.0 &&
-                    _magnetometerY! > 0)
+                Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text("Find by pointing",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline6
+                            ?.copyWith(color: colorScheme.onBackground))),
+
+                if (isPointed)
                   Padding(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.only(bottom: 250, top: 60),
                       child: GridTile(
                           child: GestureDetector(
                               child: (Card(
@@ -137,7 +147,13 @@ class _MyGyroPageState extends State<GyroPage> {
                                     PersonPage(person: testPersonFound));
                               })))
                 else
-                  Text('Move phone around to find someone. $_magnetometerX'),
+                  Text('Move phone around to find someone.',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6
+                          ?.copyWith(color: colorScheme.onBackground)),
+                // Use this if testing magnetometer
+                //Text('Move phone around to find someone. $_magnetometerX'),
               ],
             ),
           ),
@@ -168,22 +184,23 @@ class _MyGyroPageState extends State<GyroPage> {
           //     ],
           //   ),
           // ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                ElevatedButton(
-                    onPressed: () {
-                      goToPage(context, PersonPage(person: testPersonFound));
-                    },
-                    child: const Text("View Bio"),
-                    style: ElevatedButton.styleFrom(
-                        primary: colorScheme.tertiary)),
-                Text('Magnetometer: $magnetometer'),
-              ],
+          if (isPointed)
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ElevatedButton(
+                      onPressed: () {
+                        goToPage(context, PersonPage(person: testPersonFound));
+                      },
+                      child: const Text("View Bio"),
+                      style: ElevatedButton.styleFrom(
+                          primary: colorScheme.tertiary)),
+                  // Text('Magnetometer: $magnetometer'),
+                ],
+              ),
             ),
-          ),
         ],
       ),
     );
