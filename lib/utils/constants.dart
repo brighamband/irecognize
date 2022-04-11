@@ -199,7 +199,7 @@ List<AboutModel> REFRESH_ABOUT_LIST = [
 
 List<PlacesModel> PLACES_LIST = [
   PlacesModel(
-      "Wilk Ballroom", 'https://goo.gl/maps/9T68wjY1qxSZwaYa9', "Saturday"),
+      "Wilk Ballroom", 'https://goo.gl/maps/9T68wjY1qxSZwaYa9', "Friday"),
   PlacesModel(
       "Talmage Building", 'https://goo.gl/maps/4eBE29i1LKQJFSiK8', "Apr 5"),
   PlacesModel("Penguin Brothers Ice Cream Shop",
@@ -221,8 +221,8 @@ List<PlacesModel> REFRESH_PLACES_LIST = [
 ];
 
 List<ChatModel> CHATS_LIST = [
-  ChatModel("5 min", 'Today @ 3:45 PM', "WSC BALL", ORIG_CONVO),
-  ChatModel("2 hours", "Yesterday @ 11:03 AM", "TMCB", ORIG_CONVO),
+  ChatModel("5 min", 'Friday @ 7:45 PM', "WSC BALL", ORIG_CONVO),
+  ChatModel("2 hours", "Apr 7 @ 11:03 AM", "TMCB", ORIG_CONVO),
   ChatModel("32 min", "Apr 6 @ 12:10 PM", "WSC Terrace", ORIG_CONVO),
   ChatModel("4 hours", "Apr 2 @ 2:33 PM", "Kiwanis Park", ORIG_CONVO),
   ChatModel("2 hours", "Mar 30 @ 11:01 AM", "TMCB", ORIG_CONVO),
